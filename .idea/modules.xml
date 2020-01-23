@@ -76,6 +76,7 @@
       <module fileurl="file://$PROJECT_DIR$/extra_credit/extra_credit.iml" filepath="$PROJECT_DIR$/extra_credit/extra_credit.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_01/fig02_01.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_01/fig02_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_03/fig02_03.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_03/fig02_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quizzes/fig02_03-quiz-01-23-20/fig02_03-quiz-01-23-20.iml" filepath="$PROJECT_DIR$/quizzes/fig02_03-quiz-01-23-20/fig02_03-quiz-01-23-20.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_04/fig02_04.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_04/fig02_04.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_06/fig02_06.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_06/fig02_06.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_07/fig02_07.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_07/fig02_07.iml" />
@@ -257,6 +258,8 @@
       <module fileurl="file://$PROJECT_DIR$/oral_exam2/oral_exam2.iml" filepath="$PROJECT_DIR$/oral_exam2/oral_exam2.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch01/painter/painter.iml" filepath="$PROJECT_DIR$/textbook_examples/ch01/painter/painter.iml" />
       <module fileurl="file://$PROJECT_DIR$/quizzes/quizzes.iml" filepath="$PROJECT_DIR$/quizzes/quizzes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quizzes/quizzes1.iml" filepath="$PROJECT_DIR$/quizzes/quizzes1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quizzes/quizzes2.iml" filepath="$PROJECT_DIR$/quizzes/quizzes2.iml" />
       <module fileurl="file://$PROJECT_DIR$/scratch/scratch.iml" filepath="$PROJECT_DIR$/scratch/scratch.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/supplemental/supplemental.iml" filepath="$PROJECT_DIR$/textbook_examples/supplemental/supplemental.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/swd2019.iml" filepath="$PROJECT_DIR$/.idea/swd2019.iml" />
