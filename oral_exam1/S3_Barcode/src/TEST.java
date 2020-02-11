@@ -11,5 +11,7 @@ public class TEST {
         System.out.println(post.getZipcode());
         System.out.println(post.ziptobinary());
 
+        UPC a = new UPC("03600029145");
+        System.out.println(a.checksum());
     }
 }
