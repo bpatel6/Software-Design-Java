@@ -13,5 +13,6 @@ public class TEST {
 
         UPC a = new UPC("03600029145");
         System.out.println(a.checksum());
+        System.out.println(a.getupc());
     }
 }

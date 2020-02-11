@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/MVCCalculatorExamples/EXAMPLE_MVCCalculator3/EXAMPLE_MVCCalculator3.iml" filepath="$PROJECT_DIR$/textbook_examples/MVCCalculatorExamples/EXAMPLE_MVCCalculator3/EXAMPLE_MVCCalculator3.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch03/Fig03_12/Fig03_12.iml" filepath="$PROJECT_DIR$/textbook_examples/ch03/Fig03_12/Fig03_12.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch03/Fig03_13/Fig03_13.iml" filepath="$PROJECT_DIR$/textbook_examples/ch03/Fig03_13/Fig03_13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quizzes/Fig03_13-quiz-01-28-20/Fig03_13-quiz-01-28-20.iml" filepath="$PROJECT_DIR$/quizzes/Fig03_13-quiz-01-28-20/Fig03_13-quiz-01-28-20.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch04/Fig04_04-05/Fig04_04-05.iml" filepath="$PROJECT_DIR$/textbook_examples/ch04/Fig04_04-05/Fig04_04-05.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch04/Fig04_08/Fig04_08.iml" filepath="$PROJECT_DIR$/textbook_examples/ch04/Fig04_08/Fig04_08.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch04/Fig04_10/Fig04_10.iml" filepath="$PROJECT_DIR$/textbook_examples/ch04/Fig04_10/Fig04_10.iml" />
@@ -54,6 +55,8 @@
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/supplemental/HelloWorld/HelloWorld.iml" filepath="$PROJECT_DIR$/textbook_examples/supplemental/HelloWorld/HelloWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/supplemental/JUnitExample/JUnitExample.iml" filepath="$PROJECT_DIR$/textbook_examples/supplemental/JUnitExample/JUnitExample.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/MVCCalculatorExamples/MVCCalculatorExamples.iml" filepath="$PROJECT_DIR$/textbook_examples/MVCCalculatorExamples/MVCCalculatorExamples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oral_exam1/S102_OneTimePad/S102_OneTimePad.iml" filepath="$PROJECT_DIR$/oral_exam1/S102_OneTimePad/S102_OneTimePad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oral_exam1/S3_Barcode/S3_Barcode.iml" filepath="$PROJECT_DIR$/oral_exam1/S3_Barcode/S3_Barcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/supplemental/SupermarketSimulation/SupermarketSimulation.iml" filepath="$PROJECT_DIR$/textbook_examples/supplemental/SupermarketSimulation/SupermarketSimulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/TextFileApps/TextFileApps.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/TextFileApps/TextFileApps.iml" />
@@ -76,6 +79,8 @@
       <module fileurl="file://$PROJECT_DIR$/extra_credit/extra_credit.iml" filepath="$PROJECT_DIR$/extra_credit/extra_credit.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_01/fig02_01.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_01/fig02_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_03/fig02_03.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_03/fig02_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quizzes/fig02_03-quiz-01-23-20/fig02_03-quiz-01-23-20.iml" filepath="$PROJECT_DIR$/quizzes/fig02_03-quiz-01-23-20/fig02_03-quiz-01-23-20.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quizzes/fig02_03-quiz-01-23-30/fig02_03-quiz-01-23-30.iml" filepath="$PROJECT_DIR$/quizzes/fig02_03-quiz-01-23-30/fig02_03-quiz-01-23-30.iml" />
       <module fileurl="file://$PROJECT_DIR$/quizzes/fig02_03-quiz1-01-23-20/fig02_03-quiz1-01-23-20.iml" filepath="$PROJECT_DIR$/quizzes/fig02_03-quiz1-01-23-20/fig02_03-quiz1-01-23-20.iml" />
       <module fileurl="file://$PROJECT_DIR$/quizzes/fig02_03-quiz1-01-23-20/fig02_03-quiz1-01-23-201.iml" filepath="$PROJECT_DIR$/quizzes/fig02_03-quiz1-01-23-20/fig02_03-quiz1-01-23-201.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_04/fig02_04.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_04/fig02_04.iml" />

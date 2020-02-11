@@ -41,6 +41,7 @@ public class UPC {
         else {
             checkdigit = 10 - (finalsum%10);
         }
+        upc = upc + checkdigit;
         return checkdigit;
     }
 }
