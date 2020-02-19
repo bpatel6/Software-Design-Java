@@ -1,14 +1,34 @@
 public class POSTNET {
+    // Instance Variable to save zipcode and converted binary value of zip = binaryzip
     private long zipcode;
+    private String BinaryZip;
+
+    // Returns the instance variable zipcode
     public long getZipcode() {
         return zipcode;
     }
+
+    // Sets the instance variable zipcode
     public void setZipcode(long zip) {
         this.zipcode = zip;
     }
+
+    // Returns the instance variable binaryzip
+    public String getBinaryZip() {
+        return BinaryZip;
+    }
+
+    // Sets the instance variable binaryzip
+    public void setBinaryZip(String binaryZip) {
+        BinaryZip = binaryZip;
+    }
+
+    // Constructor set the value of instance variable zipcode
     public POSTNET(long input){
         this.zipcode = input;
     }
+
+    // Calculates the checkdigit for the given object zip
     public long checksum() {
         long sum = 0;
         long zip = this.zipcode;
@@ -20,41 +40,43 @@ public class POSTNET {
         checkdigit = 10 - (sum % 10);
         sum = sum + checkdigit;
         String newzip = String.valueOf(this.zipcode) + String.valueOf(checkdigit);
-        System.out.println(newzip);
         this.zipcode = Long.parseLong(newzip);
-        return sum;
+        return checkdigit;
     }
-    public StringBuilder ziptobinary(){
+
+    // Converts zip to binary representation '1' is '|' and '0' is '.'
+    public String ziptobinary(){
         StringBuilder binary = new StringBuilder();
         StringBuilder digit = new StringBuilder();
         String zip = Long.toString(this.zipcode);
+        binary.append("|");
+        digit.append("1");
         for (int i = 0; i < zip.length(); i++){
-            binary.append("|");
             if (zip.charAt(i) == '1'){
                 digit.append("00011");
                 binary.append("...||");
             }
-            if (zip.charAt(i) == '2'){
+            else if (zip.charAt(i) == '2'){
                 digit.append("00101");
                 binary.append("..|.|");
             }
-            if (zip.charAt(i) == '3'){
+            else if (zip.charAt(i) == '3'){
                 digit.append("00110");
                 binary.append("..||.");
             }
-            if (zip.charAt(i) == '4'){
+            else if (zip.charAt(i) == '4'){
                 digit.append("01001");
                 binary.append(".|..|");
             }
-            if (zip.charAt(i) == '5'){
+            else if (zip.charAt(i) == '5'){
                 digit.append("01010");
                 binary.append(".|.|.");
             }
-            if (zip.charAt(i) == '6'){
+            else if (zip.charAt(i) == '6'){
                 digit.append("01100");
                 binary.append(".||..");
             }
-            if (zip.charAt(i) == '7'){
+            else if (zip.charAt(i) == '7'){
                 digit.append("10001");
                 binary.append("|...|");
             }
@@ -62,17 +84,20 @@ public class POSTNET {
                 digit.append("10010");
                 binary.append("|..|.");
             }
-            if (zip.charAt(i) == '9'){
+            else if (zip.charAt(i) == '9'){
                 digit.append("10100");
                 binary.append("|.|..");
             }
-            if (zip.charAt(i) == '0'){
+            else if (zip.charAt(i) == '0') {
                 digit.append("11000");
                 binary.append("||...");
             }
-            binary.append("|");
         }
-        System.out.println(binary);
-        return digit;
+        binary.append("|");
+        digit.append("1");
+        // Sets the value of zip in binary digit to binaryzip instance variable
+        setBinaryZip(String.valueOf(digit));
+        return String.valueOf(binary);
     }
+
 }

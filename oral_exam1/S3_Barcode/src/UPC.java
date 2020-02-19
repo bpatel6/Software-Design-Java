@@ -50,21 +50,21 @@ public class UPC {
 
     public String encrypt(){
         StringBuilder buildencrypt = new StringBuilder();
-        buildencrypt.append("101 ");
+        buildencrypt.append("101");
         buildencrypt.append(encryptleft(upc.substring(0,6)));
-        buildencrypt.append(" 01010 ");
+        buildencrypt.append("01010");
         buildencrypt.append(encryptright(upc.substring(6,12)));
-        buildencrypt.append(" 101");
+        buildencrypt.append("101");
         this.encryptedupc = String.valueOf(buildencrypt);
         return encryptedupc;
     }
 
-    public String decrypt(String input){
+    public static String decrypt(String input){
         StringBuilder build = new StringBuilder();
-        String left = input.substring(4,46);
-        String right = input.substring(53,95);
+        String left = input.substring(3,45);
         build.append(decrypthelper(left));
-        build.append(decrypthelper(input.substring(53,95)));
+        build.append(decrypthelper(input.substring(50,92)));
+        System.out.println("Checkdigit is: " + build.charAt(11));
         return String.valueOf(build);
     }
 
@@ -142,7 +142,7 @@ public class UPC {
         return binary;
     }
 
-    public String decrypthelper(String input){
+    public static String decrypthelper(String input){
         StringBuilder upc = new StringBuilder();
         for (int i = 0; i < input.length(); i = i+7){
             if (input.substring(i, i + 7).equals("0001101") || input.substring(i, i + 7).equals("1110010")){
