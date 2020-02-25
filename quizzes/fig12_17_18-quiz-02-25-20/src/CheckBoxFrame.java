@@ -45,14 +45,16 @@ public class CheckBoxFrame extends JFrame {
             Font font = null; // stores the new Font
 
             // determine which CheckBoxes are checked and create Font
-            if (boldJCheckBox.isSelected() && italicJCheckBox.isSelected())
-                font = new Font("Serif", Font.BOLD + Font.ITALIC, 14);
+            if (Fonts.isSelected() && boldJCheckBox.isSelected() && italicJCheckBox.isSelected())
+                font = new Font("Courier", Font.BOLD + Font.ITALIC, 14);
             else if (boldJCheckBox.isSelected())
                 font = new Font("Serif", Font.BOLD, 14);
             else if (italicJCheckBox.isSelected())
                 font = new Font("Serif", Font.ITALIC, 14);
             else if (Fonts.isSelected())
                 font = new Font("Courier", Font.PLAIN, 14);
+            else if (italicJCheckBox.isSelected() && boldJCheckBox.isSelected())
+                font = new Font("Courier", Font.BOLD + Font.ITALIC, 14);
 
             textField.setFont(font);
         }
