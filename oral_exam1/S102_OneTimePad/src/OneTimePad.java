@@ -6,6 +6,22 @@ public class OneTimePad {
     private String text;
     private String encryptedtext;
 
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getEncryptedtext() {
+        return encryptedtext;
+    }
+
+    public void setEncryptedtext(String encryptedtext) {
+        this.encryptedtext = encryptedtext;
+    }
+
     public int getN() {
         return n;
     }
