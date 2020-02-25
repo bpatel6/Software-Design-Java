@@ -3,6 +3,7 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.FocusListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
@@ -10,6 +11,7 @@ public class CheckBoxFrame extends JFrame {
     private final JTextField textField; // displays text in changing fonts
     private final JCheckBox boldJCheckBox; // to select/deselect bold
     private final JCheckBox italicJCheckBox; // to select/deselect italic
+    private final JCheckBox Fonts;
 
     // CheckBoxFrame constructor adds JCheckBoxes to JFrame
     public CheckBoxFrame() {
@@ -23,6 +25,8 @@ public class CheckBoxFrame extends JFrame {
 
         boldJCheckBox = new JCheckBox("Bold");
         italicJCheckBox = new JCheckBox("Italic");
+        Fonts = new JCheckBox("Font");
+        add(Fonts);
         add(boldJCheckBox); // add bold checkbox to JFrame
         add(italicJCheckBox); // add italic checkbox to JFrame
 
@@ -30,6 +34,7 @@ public class CheckBoxFrame extends JFrame {
         CheckBoxHandler handler = new CheckBoxHandler();
         boldJCheckBox.addItemListener(handler);
         italicJCheckBox.addItemListener(handler);
+        Fonts.addItemListener(handler);
     }
 
     // private inner class for ItemListener event handling
@@ -46,8 +51,8 @@ public class CheckBoxFrame extends JFrame {
                 font = new Font("Serif", Font.BOLD, 14);
             else if (italicJCheckBox.isSelected())
                 font = new Font("Serif", Font.ITALIC, 14);
-            else
-                font = new Font("Serif", Font.PLAIN, 14);
+            else if (Fonts.isSelected())
+                font = new Font("Courier", Font.PLAIN, 14);
 
             textField.setFont(font);
         }
