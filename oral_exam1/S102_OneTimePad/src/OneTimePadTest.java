@@ -19,8 +19,5 @@ public class OneTimePadTest {
     public static void main(String[] args) {
         OneTimePad p3 = new OneTimePad("HEHE YOU ARE THE BEST");
         System.out.println(p3.encryptmedium());
-
-        OneTimePadHard p4 = new OneTimePadHard();
-        p4.keyGenerator(20);
     }
 }

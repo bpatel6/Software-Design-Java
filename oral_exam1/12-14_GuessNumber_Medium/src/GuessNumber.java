@@ -55,15 +55,20 @@ public class GuessNumber extends JFrame{
                 random_n = rand.nextInt(1000);
                 text1.setEditable(true);
                 label2.setText("Good Luck!");
+                button1.setEnabled(false);
                 System.out.println(random_n);
             }
 
             if (Event.getSource() == text1){
                 i = Integer.parseInt(Event.getActionCommand());
-                if (getRandom_n() == i) {
+                if (i > 1000){
+                    JOptionPane.showMessageDialog(null, "Enter number between 1-1000");
+                }
+                else if (getRandom_n() == i) {
                     label2.setText("Correct!");
                     getContentPane().setBackground(Color.white);
                     text1.setEditable(false);
+                    button1.setEnabled(true);
                 }
                 else if ((Math.abs(getRandom_n() - i) <= 50)){
                     label2.setText("Very Close!");
