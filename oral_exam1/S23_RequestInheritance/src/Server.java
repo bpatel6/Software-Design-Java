@@ -1,6 +1,5 @@
 import java.util.Random;
 import java.util.Stack;
-import java.util.UUID;
 
 public class Server {
     private static final Integer NUM_REQ_TYPES = 9;

@@ -10,7 +10,7 @@ public class ArabicToRomanGUI extends JFrame{
     private final JTextField text1;
     private final JTextField text2;
     private final JLabel label1, label2, label3;
-    private static final char [] keys = {'1','2','3','4','5','6','7','8','9','0'};
+    private static final char [] numbers = {'1','2','3','4','5','6','7','8','9','0'};
     private static final char [] roman = {'I','V','X','L','C','D','M'};
 
     public ArabicToRomanGUI(){
@@ -55,6 +55,7 @@ public class ArabicToRomanGUI extends JFrame{
                         s.deleteCharAt(s.length() - 1);
                         if (s.length() == 0){
                             text2.setText("");
+                            text1.setText("");
                         }
                         else {
                             text2.setText(arabictoroman(parseInt(String.valueOf(s))));
@@ -75,8 +76,8 @@ public class ArabicToRomanGUI extends JFrame{
                     if (keyEvent.getKeyCode() != KeyEvent.VK_CAPS_LOCK) {
                         if (keyEvent.getKeyCode() != keyEvent.VK_SHIFT) {
                             JOptionPane.showMessageDialog(null, "Invalid Input. Enter # between 0-9");
-                            //text1.setText("");
-                            //text2.setText("");
+                            text1.setText("");
+                            text2.setText("");
                         }
                     }
                 }
@@ -89,6 +90,7 @@ public class ArabicToRomanGUI extends JFrame{
                         s.deleteCharAt(s.length() - 1);
                         if (s.length() == 0){
                             text1.setText("");
+                            text2.setText("");
                         }
                         else {
                             text1.setText(romantoarabic(s.toString()));
@@ -102,8 +104,8 @@ public class ArabicToRomanGUI extends JFrame{
                     if (keyEvent.getKeyCode() != KeyEvent.VK_CAPS_LOCK) {
                         if (keyEvent.getKeyCode() != KeyEvent.VK_SHIFT) {
                             JOptionPane.showMessageDialog(null, "Invalid Input. Enter ROMAN Alphabets only");
-                            //text2.setText("");
-                            //text1.setText("");
+                            text2.setText("");
+                            text1.setText("");
                         }
                     }
                 }
@@ -220,7 +222,7 @@ public class ArabicToRomanGUI extends JFrame{
     }
 
     public boolean checkkeynumber(char input){
-        for (char key : keys) {
+        for (char key : numbers) {
             if (input == key) {
                 return true;
             }
