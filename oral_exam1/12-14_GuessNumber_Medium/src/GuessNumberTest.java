@@ -3,7 +3,7 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 public class GuessNumberTest {
-    public static void main(String args[]){
+    public static void main(String[] args) {
         GuessNumber guessnumber = new GuessNumber();
         guessnumber.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         guessnumber.setResizable(false);

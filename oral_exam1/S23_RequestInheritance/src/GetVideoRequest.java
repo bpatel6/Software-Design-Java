@@ -26,7 +26,7 @@ public class GetVideoRequest extends Request {
         return "UUID: " + randUUID + '\n' + randVideo;
     }
 
-    public static String count(){
+    public static String count() {
         return String.valueOf(videocount);
     }
 }

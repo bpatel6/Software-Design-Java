@@ -23,14 +23,13 @@ public class GetFileRequest extends Request {
     }
 
 
-
     @Override
     public String toString() {
-        return  "UUID: " + randUUID +
-                 '\n' + randFile;
+        return "UUID: " + randUUID +
+                '\n' + randFile;
     }
 
-    public static String count(){
+    public static String count() {
         return String.valueOf(filecount);
     }
 }

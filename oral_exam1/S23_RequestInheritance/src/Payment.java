@@ -11,7 +11,7 @@ public class Payment {
 
     @Override
     public String toString() {
-        return  "Payment Sender: " + randName + '\n' +
+        return "Payment Sender: " + randName + '\n' +
                 "Payment amount: $" + nextInt + '\n' +
                 "Payment receiver: " + randName1;
     }

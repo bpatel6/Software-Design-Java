@@ -13,6 +13,7 @@ public class GetRequest extends Request {
 
     private UUID randUUID;
     private String randURL;
+
     public GetRequest(UUID randUUID, String randURL) {
         getcounts++;
         Request.setCount(Request.getCount() + 1);
@@ -26,7 +27,7 @@ public class GetRequest extends Request {
                 "Universal Resource Locator (URL): " + randURL;
     }
 
-    public static String count(){
+    public static String count() {
         return String.valueOf(getcounts);
     }
 }

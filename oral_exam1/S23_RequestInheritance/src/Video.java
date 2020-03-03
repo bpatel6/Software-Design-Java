@@ -11,7 +11,7 @@ public class Video {
 
     @Override
     public String toString() {
-        return  "Universal Resource Locator (URL): " + randURL + '\n' +
+        return "Universal Resource Locator (URL): " + randURL + '\n' +
                 "Video: " + randVideoTitle + '\n' +
                 "By: " + randName;
     }

@@ -27,7 +27,7 @@ public class PostRequest extends Request {
                 "Post request to server with IP address: " + randIP;
     }
 
-    public static String count(){
+    public static String count() {
         return String.valueOf(postcounts);
     }
 }

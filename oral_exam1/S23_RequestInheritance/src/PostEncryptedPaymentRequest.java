@@ -27,13 +27,13 @@ public class PostEncryptedPaymentRequest extends Request {
 
     @Override
     public String toString() {
-        return  "UUID: " + randUUID + '\n' +
+        return "UUID: " + randUUID + '\n' +
                 "Post request to server with IP address: " + randIP + '\n' +
                 "Payment Data" + '\n' + randPayment + '\n' +
                 "This payment was encrypted using: " + randEncryptionsScheme;
     }
 
-    public static String count(){
+    public static String count() {
         return String.valueOf(encryptedpaymentcount);
     }
 }

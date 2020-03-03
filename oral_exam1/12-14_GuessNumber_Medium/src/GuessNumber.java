@@ -4,9 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
-public class GuessNumber extends JFrame{
+public class GuessNumber extends JFrame {
     private int random_n;
     private final JLabel label1;
+    private final JLabel label2;
+    private final JTextField text1;
+    private final JButton button1;
 
     public int getRandom_n() {
         return random_n;
@@ -16,12 +19,8 @@ public class GuessNumber extends JFrame{
         this.random_n = random_n;
     }
 
-    private final JLabel label2;
-    private final JTextField text1;
-    private final JButton button1;
-
-    public GuessNumber(){
-        super ("GuessNumber");
+    public GuessNumber() {
+        super("GuessNumber");
         super.getContentPane().setBackground(Color.cyan);
         random_n = 0;
         setLayout(null);
@@ -36,9 +35,9 @@ public class GuessNumber extends JFrame{
         add(label2);
         add(text1);
         add(button1);
-        label1.setBounds(50,35, label1.getPreferredSize().width, label1.getPreferredSize().height);
-        label2.setBounds(120,130, label2.getPreferredSize().width,label2.getPreferredSize().height);
-        text1.setBounds(70,55, text1.getPreferredSize().width, text1.getPreferredSize().height);
+        label1.setBounds(50, 35, label1.getPreferredSize().width, label1.getPreferredSize().height);
+        label2.setBounds(120, 130, label2.getPreferredSize().width, label2.getPreferredSize().height);
+        text1.setBounds(70, 55, text1.getPreferredSize().width, text1.getPreferredSize().height);
         button1.setBounds(110, 0, button1.getPreferredSize().width, button1.getPreferredSize().height);
 
         GuessNumberHandler handler = new GuessNumberHandler();
@@ -49,7 +48,7 @@ public class GuessNumber extends JFrame{
     private class GuessNumberHandler implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent Event) {
-            int i = 0;
+            int i;
             if (Event.getSource() == button1) {
                 Random rand = new Random();
                 random_n = rand.nextInt(1000);
@@ -59,37 +58,29 @@ public class GuessNumber extends JFrame{
                 System.out.println(random_n);
             }
 
-            if (Event.getSource() == text1){
+            if (Event.getSource() == text1) {
                 i = Integer.parseInt(Event.getActionCommand());
-                if (i > 1000){
+                if (i > 1000) {
                     JOptionPane.showMessageDialog(null, "Enter number between 1-1000");
-                }
-                else if (getRandom_n() == i) {
+                } else if (getRandom_n() == i) {
                     label2.setText("Correct!");
                     getContentPane().setBackground(Color.white);
                     text1.setEditable(false);
                     button1.setEnabled(true);
-                }
-                else if ((Math.abs(getRandom_n() - i) <= 50)){
+                } else if ((Math.abs(getRandom_n() - i) <= 50)) {
                     label2.setText("Very Close!");
                     getContentPane().setBackground(Color.green);
-                }
-                else if ((Math.abs(getRandom_n() - i) <= 100)){
+                } else if ((Math.abs(getRandom_n() - i) <= 100)) {
                     label2.setText("Close!!!");
                     getContentPane().setBackground(Color.yellow);
-                }
-                else if (i < getRandom_n()){
+                } else if (i < getRandom_n()) {
                     label2.setText("Too Low");
                     getContentPane().setBackground(Color.red);
-                }
-                else if (i > getRandom_n()){
+                } else if (i > getRandom_n()) {
                     label2.setText("Too High");
                     getContentPane().setBackground(Color.blue);
                 }
             }
-
         }
     }
-
-
 }

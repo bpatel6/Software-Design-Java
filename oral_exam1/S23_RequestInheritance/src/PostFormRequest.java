@@ -14,6 +14,7 @@ public class PostFormRequest extends Request {
 
     private String randIP;
     private Form randForm;
+
     public PostFormRequest(UUID randUUID, String randIP, Form randForm) {
         postformcount++;
         PostRequest.setPostcounts(PostRequest.getPostcounts() + 1);
@@ -25,12 +26,12 @@ public class PostFormRequest extends Request {
 
     @Override
     public String toString() {
-        return  "UUID: " + randUUID + '\n' +
+        return "UUID: " + randUUID + '\n' +
                 "Post request to server with IP address: " + randIP + '\n' +
                 randForm;
     }
 
-    public static String count(){
+    public static String count() {
         return String.valueOf(postformcount);
     }
 }

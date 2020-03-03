@@ -1,5 +1,6 @@
 public class File {
     private String randFilePath, randFileType;
+
     public File(String randFilePath, String randFileType) {
         this.randFileType = randFileType;
         this.randFilePath = randFilePath;

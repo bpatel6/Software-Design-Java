@@ -31,7 +31,7 @@ public class PostPaymentRequest extends Request {
                 randPayment;
     }
 
-    public static String count(){
+    public static String count() {
         return String.valueOf(postpaymentcount);
     }
 }

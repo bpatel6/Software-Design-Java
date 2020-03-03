@@ -24,7 +24,7 @@ public class POSTNET {
     }
 
     // Constructor set the value of instance variable zipcode
-    public POSTNET(long input){
+    public POSTNET(long input) {
         this.zipcode = input;
     }
 
@@ -39,56 +39,48 @@ public class POSTNET {
         long checkdigit;
         checkdigit = 10 - (sum % 10);
         sum = sum + checkdigit;
-        String newzip = String.valueOf(this.zipcode) + String.valueOf(checkdigit);
+        String newzip = this.zipcode + String.valueOf(checkdigit);
         this.zipcode = Long.parseLong(newzip);
         return checkdigit;
     }
 
     // Converts zip to binary representation '1' is '|' and '0' is '.'
-    public String ziptobinary(){
+    public String ziptobinary() {
         StringBuilder binary = new StringBuilder();
         StringBuilder digit = new StringBuilder();
         String zip = Long.toString(this.zipcode);
         binary.append("|");
         digit.append("1");
-        for (int i = 0; i < zip.length(); i++){
-            if (zip.charAt(i) == '1'){
+        for (int i = 0; i < zip.length(); i++) {
+            if (zip.charAt(i) == '1') {
                 digit.append("00011");
                 binary.append("...||");
-            }
-            else if (zip.charAt(i) == '2'){
+            } else if (zip.charAt(i) == '2') {
                 digit.append("00101");
                 binary.append("..|.|");
-            }
-            else if (zip.charAt(i) == '3'){
+            } else if (zip.charAt(i) == '3') {
                 digit.append("00110");
                 binary.append("..||.");
-            }
-            else if (zip.charAt(i) == '4'){
+            } else if (zip.charAt(i) == '4') {
                 digit.append("01001");
                 binary.append(".|..|");
-            }
-            else if (zip.charAt(i) == '5'){
+            } else if (zip.charAt(i) == '5') {
                 digit.append("01010");
                 binary.append(".|.|.");
-            }
-            else if (zip.charAt(i) == '6'){
+            } else if (zip.charAt(i) == '6') {
                 digit.append("01100");
                 binary.append(".||..");
-            }
-            else if (zip.charAt(i) == '7'){
+            } else if (zip.charAt(i) == '7') {
                 digit.append("10001");
                 binary.append("|...|");
             }
-            if (zip.charAt(i) == '8'){
+            if (zip.charAt(i) == '8') {
                 digit.append("10010");
                 binary.append("|..|.");
-            }
-            else if (zip.charAt(i) == '9'){
+            } else if (zip.charAt(i) == '9') {
                 digit.append("10100");
                 binary.append("|.|..");
-            }
-            else if (zip.charAt(i) == '0') {
+            } else if (zip.charAt(i) == '0') {
                 digit.append("11000");
                 binary.append("||...");
             }

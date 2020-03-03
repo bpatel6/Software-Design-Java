@@ -26,7 +26,7 @@ public class PostEncryptedFormRequest extends Request {
                 "This form was encrypted using" + randEncryptionScheme;
     }
 
-    public static String count(){
+    public static String count() {
         return String.valueOf(encryptedformcount);
     }
 }
