@@ -4,6 +4,9 @@ public class Request {
     private static int count;
     private UUID randUUID;
 
+    public Request() {
+    }
+
     public static int getCount() {
         return count;
     }
@@ -20,10 +23,6 @@ public class Request {
     @Override
     public String toString() {
         return "UUID: " + randUUID;
-    }
-
-    public Request() {
-
     }
 
     public static String count() {
