@@ -1,8 +1,9 @@
 import java.util.UUID;
 
-public class Request {
+public class Request extends DataGenerator{
     private static int count;
-    private UUID randUUID;
+    protected UUID randUUID;
+    //private UUID randUUID;
 
     public Request() {
     }
@@ -22,7 +23,7 @@ public class Request {
 
     @Override
     public String toString() {
-        return "UUID: " + randUUID;
+        return "RequestInheritance." + super.toString() + '\n' + "UUID: " + randUUID;
     }
 
     public static String count() {

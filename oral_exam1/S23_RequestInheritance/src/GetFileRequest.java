@@ -3,7 +3,6 @@ import java.util.UUID;
 
 public class GetFileRequest extends Request {
     private static int filecount;
-    private UUID randUUID;
     private File randFile;
 
     public static int getFilecount() {
@@ -19,13 +18,13 @@ public class GetFileRequest extends Request {
         GetRequest.setGetcounts(GetRequest.getGetcounts() + 1);
         Request.setCount(Request.getCount() + 1);
         this.randFile = randFile;
-        this.randUUID = randUUID;
+        super.randUUID = randUUID;
     }
 
 
     @Override
     public String toString() {
-        return "UUID: " + randUUID +
+        return super.toString() +
                 '\n' + randFile;
     }
 

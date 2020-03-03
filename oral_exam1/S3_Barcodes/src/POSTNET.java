@@ -1,34 +1,57 @@
 public class POSTNET {
-    // Instance Variable to save zipcode and converted binary value of zip = binaryzip
+    /**
+     * long zipcode: to store the input zipcode
+     * string Binaryzip: to store computed value of inputed zip in binary
+     */
     private long zipcode;
     private String BinaryZip;
 
-    // Returns the instance variable zipcode
+    /**
+     * To access the zipcode instance variable value
+     *
+     * @return zipcode
+     */
     public long getZipcode() {
         return zipcode;
     }
 
-    // Sets the instance variable zipcode
+    /**
+     * To set the zipcode instance variable value
+     *
+     * @return no return
+     */
     public void setZipcode(long zip) {
         this.zipcode = zip;
     }
 
-    // Returns the instance variable binaryzip
+    /**
+     *
+     * @return
+     */
     public String getBinaryZip() {
         return BinaryZip;
     }
 
-    // Sets the instance variable binaryzip
+    /**
+     *
+     * @param binaryZip
+     */
     public void setBinaryZip(String binaryZip) {
         BinaryZip = binaryZip;
     }
 
-    // Constructor set the value of instance variable zipcode
+    /**
+     *
+     * @param input
+     */
     public POSTNET(long input) {
         this.zipcode = input;
     }
 
-    // Calculates the checkdigit for the given object zip
+    /**
+     *
+     * @return
+     */
     public long checksum() {
         long sum = 0;
         long zip = this.zipcode;
@@ -44,7 +67,10 @@ public class POSTNET {
         return checkdigit;
     }
 
-    // Converts zip to binary representation '1' is '|' and '0' is '.'
+    /**
+     *
+     * @return
+     */
     public String ziptobinary() {
         StringBuilder binary = new StringBuilder();
         StringBuilder digit = new StringBuilder();
@@ -91,5 +117,4 @@ public class POSTNET {
         setBinaryZip(String.valueOf(digit));
         return String.valueOf(binary);
     }
-
 }

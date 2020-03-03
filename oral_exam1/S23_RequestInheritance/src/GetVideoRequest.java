@@ -17,13 +17,13 @@ public class GetVideoRequest extends Request {
         videocount++;
         GetRequest.setGetcounts(GetRequest.getGetcounts() + 1);
         Request.setCount(Request.getCount() + 1);
-        this.randUUID = randUUID;
+        super.randUUID = randUUID;
         this.randVideo = randVideo;
     }
 
     @Override
     public String toString() {
-        return "UUID: " + randUUID + '\n' + randVideo;
+        return super.toString() + '\n' + randVideo;
     }
 
     public static String count() {

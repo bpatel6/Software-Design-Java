@@ -18,12 +18,12 @@ public class GetRequest extends Request {
         getcounts++;
         Request.setCount(Request.getCount() + 1);
         this.randURL = randURL;
-        this.randUUID = randUUID;
+        super.randUUID = randUUID;
     }
 
-    @Override
+
     public String toString() {
-        return "UUID: " + randUUID + '\n' +
+        return super.toString() + '\n' +
                 "Universal Resource Locator (URL): " + randURL;
     }
 

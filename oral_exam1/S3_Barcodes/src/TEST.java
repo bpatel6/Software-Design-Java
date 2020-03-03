@@ -37,6 +37,7 @@ public class TEST {
         assertEquals(4, u1.checksum());
         assertEquals("012546673754", u1.getupc());
         assertEquals("10100011010011001001001101100010100011010111101010101000010001001000010100010010011101011100101", u1.encrypt());
+        System.out.println(u1.encrypt().length());
         assertEquals("012546673754", UPC.decrypt(u1.getEncryptedupc()));
     }
 

@@ -4,21 +4,42 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
+/**
+ * The class to represent
+ * @see GuessNumber
+ */
+
 public class GuessNumber extends JFrame {
+    /**
+     * random_n to store the random integer generated
+     */
     private int random_n;
     private final JLabel label1;
     private final JLabel label2;
     private final JTextField text1;
     private final JButton button1;
 
+    /**
+     * Gets the random_n variable value
+     *
+     * @return the random_n value
+     */
     public int getRandom_n() {
         return random_n;
     }
 
+    /**
+     * Sets the random_n variable value
+     * @param random_n integer to set set it to random_n
+     * @return no value return
+     */
     public void setRandom_n(int random_n) {
         this.random_n = random_n;
     }
 
+    /**
+     * GuessNumber() constructor create an object
+     */
     public GuessNumber() {
         super("GuessNumber");
         super.getContentPane().setBackground(Color.cyan);
@@ -45,6 +66,11 @@ public class GuessNumber extends JFrame {
         button1.addActionListener(handler);
     }
 
+    /**
+     * The class to handle the events of GuessNumber class
+     * @see GuessNumberHandler
+     * GuessNumberHandler also implements the ActionListener
+     */
     private class GuessNumberHandler implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent Event) {

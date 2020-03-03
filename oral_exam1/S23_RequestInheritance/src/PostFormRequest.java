@@ -1,8 +1,12 @@
 import java.util.UUID;
 
-public class PostFormRequest extends Request {
+public class PostFormRequest extends PostRequest {
     private static int postformcount;
-    private UUID randUUID;
+    protected Form randForm;
+
+    public PostFormRequest() {
+
+    }
 
     public static int getPostformcount() {
         return postformcount;
@@ -12,22 +16,21 @@ public class PostFormRequest extends Request {
         PostFormRequest.postformcount = postformcount;
     }
 
-    private String randIP;
-    private Form randForm;
+
 
     public PostFormRequest(UUID randUUID, String randIP, Form randForm) {
+        super();
         postformcount++;
         PostRequest.setPostcounts(PostRequest.getPostcounts() + 1);
         Request.setCount(Request.getCount() + 1);
-        this.randUUID = randUUID;
-        this.randIP = randIP;
+        super.randUUID = randUUID;
+        super.randIP = randIP;
         this.randForm = randForm;
     }
 
     @Override
     public String toString() {
-        return "UUID: " + randUUID + '\n' +
-                "Post request to server with IP address: " + randIP + '\n' +
+        return super.toString() +  '\n' +
                 randForm;
     }
 

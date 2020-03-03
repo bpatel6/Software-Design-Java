@@ -1,36 +1,71 @@
 public class UPC {
+    /**
+     *
+     */
     private String upc;
     private String encryptedupc;
     private int checkdigit;
 
+    /**
+     *
+     * @return
+     */
     public String getupc() {
         return upc;
     }
 
+    /**
+     *
+     * @param upc
+     */
     public void setupc(String upc) {
         this.upc = upc;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getCheckdigit() {
         return checkdigit;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getEncryptedupc() {
         return encryptedupc;
     }
 
+    /**
+     *
+     * @param encryptedupc
+     */
     public void setEncryptedupc(String encryptedupc) {
         this.encryptedupc = encryptedupc;
     }
 
+    /**
+     *
+     * @param checkdigit
+     */
     public void setCheckdigit(int checkdigit) {
         this.checkdigit = checkdigit;
     }
 
+    /**
+     *
+     * @param input
+     */
     public UPC(String input) {
         this.upc = input;
     }
 
+    /**
+     *
+     * @return
+     */
     public long checksum() {
         int sumeven = 0;
         int sumodd = 0;
@@ -52,6 +87,10 @@ public class UPC {
         return checkdigit;
     }
 
+    /**
+     *
+     * @return
+     */
     public String encrypt() {
         StringBuilder buildencrypt = new StringBuilder();
         buildencrypt.append("101");
@@ -63,6 +102,11 @@ public class UPC {
         return encryptedupc;
     }
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     public static String decrypt(String input) {
         StringBuilder build = new StringBuilder();
         String left = input.substring(3, 45);
@@ -72,6 +116,11 @@ public class UPC {
         return String.valueOf(build);
     }
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     public StringBuilder encryptleft(String input) {
         StringBuilder binary = new StringBuilder();
         for (int i = 0; i < input.length(); i++) {
@@ -100,6 +149,11 @@ public class UPC {
         return binary;
     }
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     public StringBuilder encryptright(String input) {
         StringBuilder binary = new StringBuilder();
         for (int i = 0; i < input.length(); i++) {
@@ -128,6 +182,11 @@ public class UPC {
         return binary;
     }
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     public static String decrypthelper(String input) {
         StringBuilder upc = new StringBuilder();
         for (int i = 0; i < input.length(); i = i + 7) {
