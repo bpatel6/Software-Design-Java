@@ -1,5 +1,10 @@
 import javax.swing.*;
 
+/**
+ * The class to runs and tests the GuessNumber() implementation
+ * @see GuessNumberTest
+ */
+
 public class GuessNumberTest {
     public static void main(String[] args) {
         GuessNumber guessnumber = new GuessNumber();
