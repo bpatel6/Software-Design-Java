@@ -1,72 +1,78 @@
 public class UPC {
     /**
-     *
+     * String upc: stores the UPC product code
      */
     private String upc;
+    /**
+     * String encryptedupc: stores the encrypted value of the UPC product code
+     */
     private String encryptedupc;
+    /**
+     * int checkdigit: store the computed check digit of the UPC product code
+     */
     private int checkdigit;
 
     /**
-     *
-     * @return
+     * To access the value of upc var.
+     * @return return the value upc var.
      */
     public String getupc() {
         return upc;
     }
 
     /**
-     *
-     * @param upc
+     * To set the value of upc var.
+     * @param upc the value to set upc var.
      */
     public void setupc(String upc) {
         this.upc = upc;
     }
 
     /**
-     *
-     * @return
+     * To access the value of checkdigit var.
+     * @return return the value of checkdigit var.
      */
     public int getCheckdigit() {
         return checkdigit;
     }
 
     /**
-     *
-     * @return
+     * To acess the value of encryptedupc var.
+     * @return return the value of encryptedupc var.
      */
     public String getEncryptedupc() {
         return encryptedupc;
     }
 
     /**
-     *
-     * @param encryptedupc
+     * To set the value of encryptedupc var.
+     * @param encryptedupc set the value of encryptedupc var.
      */
     public void setEncryptedupc(String encryptedupc) {
         this.encryptedupc = encryptedupc;
     }
 
     /**
-     *
-     * @param checkdigit
+     * To set the value of checkdigit var.
+     * @param checkdigit passed value set to checkdigit var.
      */
     public void setCheckdigit(int checkdigit) {
         this.checkdigit = checkdigit;
     }
 
     /**
-     *
-     * @param input
+     * Constructor to initialize the upc var. value
+     * @param input passed UPC product value set to the upc var.
      */
     public UPC(String input) {
         this.upc = input;
     }
 
     /**
-     *
-     * @return
+     * To compute the checkdigit for the referred UPC object
+     * @return computed checkdigit number for the 11 digit UPC product code
      */
-    public long checksum() {
+    public long checkdigit() {
         int sumeven = 0;
         int sumodd = 0;
         int finalsum;
@@ -88,8 +94,8 @@ public class UPC {
     }
 
     /**
-     *
-     * @return
+     * To encrypt to UPC into binary representation
+     * @return binary representation of the UPC code
      */
     public String encrypt() {
         StringBuilder buildencrypt = new StringBuilder();
@@ -103,9 +109,9 @@ public class UPC {
     }
 
     /**
-     *
-     * @param input
-     * @return
+     * To decrypt the binary representation of the UPC code
+     * @param input binary represented upc code
+     * @return UPC code
      */
     public static String decrypt(String input) {
         StringBuilder build = new StringBuilder();
@@ -117,9 +123,9 @@ public class UPC {
     }
 
     /**
-     *
-     * @param input
-     * @return
+     * To encrypt left digit of the UPC product code
+     * @param input UPC product code left most 6 digits of the UPC code
+     * @return Binary presentation of the left most 6 digit of the UPC code
      */
     public StringBuilder encryptleft(String input) {
         StringBuilder binary = new StringBuilder();
@@ -150,9 +156,9 @@ public class UPC {
     }
 
     /**
-     *
-     * @param input
-     * @return
+     * To encrypt right digits of the UPC code
+     * @param input UPC product code right most 6 digits of the UPC code
+     * @return Binary presentation of the right most 6 digit of the UPC code
      */
     public StringBuilder encryptright(String input) {
         StringBuilder binary = new StringBuilder();
@@ -183,9 +189,9 @@ public class UPC {
     }
 
     /**
-     *
-     * @param input
-     * @return
+     * Helper function to decrypt the binary presented UPC code
+     * @param input Binary representation of the UPC code
+     * @return UPC code
      */
     public static String decrypthelper(String input) {
         StringBuilder upc = new StringBuilder();

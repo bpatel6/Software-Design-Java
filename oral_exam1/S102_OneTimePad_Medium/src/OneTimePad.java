@@ -1,40 +1,84 @@
 import java.util.Random;
 
 public class OneTimePad {
+    /**
+     *
+     */
     private final char[] alphabets = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+    /**
+     *
+     */
     private int n;
+    /**
+     *
+     */
     private String text;
+    /**
+     *
+     */
     private String encryptedtext;
 
+    /**
+     *
+     * @return
+     */
     public String getText() {
         return text;
     }
 
+    /**
+     *
+     * @param text
+     */
     public void setText(String text) {
         this.text = text;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getEncryptedtext() {
         return encryptedtext;
     }
 
+    /**
+     *
+     * @param encryptedtext
+     */
     public void setEncryptedtext(String encryptedtext) {
         this.encryptedtext = encryptedtext;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getN() {
         return n;
     }
 
+    /**
+     *
+     * @param n
+     */
     public void setN(int n) {
         this.n = n;
     }
 
+    /**
+     *
+     * @param input
+     */
     public OneTimePad(String input) {
         this.text = input;
         this.n = 13;
     }
 
+    /**
+     *
+     * @return
+     */
     public String encrypt() {
         StringBuilder build = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
@@ -56,6 +100,10 @@ public class OneTimePad {
         return String.valueOf(build);
     }
 
+    /**
+     *
+     * @return
+     */
     public String encryptmedium() {
         StringBuilder build = new StringBuilder();
         StringBuilder number = new StringBuilder();
