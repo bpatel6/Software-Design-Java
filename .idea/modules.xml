@@ -59,10 +59,10 @@
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/supplemental/HelloWorld/HelloWorld.iml" filepath="$PROJECT_DIR$/textbook_examples/supplemental/HelloWorld/HelloWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/supplemental/JUnitExample/JUnitExample.iml" filepath="$PROJECT_DIR$/textbook_examples/supplemental/JUnitExample/JUnitExample.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/MVCCalculatorExamples/MVCCalculatorExamples.iml" filepath="$PROJECT_DIR$/textbook_examples/MVCCalculatorExamples/MVCCalculatorExamples.iml" />
-      <module fileurl="file://$PROJECT_DIR$/oral_exam1/S102_OneTimePad/S102_OneTimePad.iml" filepath="$PROJECT_DIR$/oral_exam1/S102_OneTimePad/S102_OneTimePad.iml" />
-      <module fileurl="file://$PROJECT_DIR$/oral_exam1/S10_ArabicToRomanGUI/S10_ArabicToRomanGUI.iml" filepath="$PROJECT_DIR$/oral_exam1/S10_ArabicToRomanGUI/S10_ArabicToRomanGUI.iml" />
-      <module fileurl="file://$PROJECT_DIR$/oral_exam1/S23_RequestInheritance/S23_RequestInheritance.iml" filepath="$PROJECT_DIR$/oral_exam1/S23_RequestInheritance/S23_RequestInheritance.iml" />
-      <module fileurl="file://$PROJECT_DIR$/oral_exam1/S3_Barcodes/S3_Barcodes.iml" filepath="$PROJECT_DIR$/oral_exam1/S3_Barcodes/S3_Barcodes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oral_exam1/S102_OneTimePad_Medium/S102_OneTimePad_Medium.iml" filepath="$PROJECT_DIR$/oral_exam1/S102_OneTimePad_Medium/S102_OneTimePad_Medium.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oral_exam1/S10_ArabicToRomanGUI_Hard/S10_ArabicToRomanGUI_Hard.iml" filepath="$PROJECT_DIR$/oral_exam1/S10_ArabicToRomanGUI_Hard/S10_ArabicToRomanGUI_Hard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oral_exam1/S23_RequestInheritance_Easy/S23_RequestInheritance_Easy.iml" filepath="$PROJECT_DIR$/oral_exam1/S23_RequestInheritance_Easy/S23_RequestInheritance_Easy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oral_exam1/S3_Barcodes_Medium/S3_Barcodes_Medium.iml" filepath="$PROJECT_DIR$/oral_exam1/S3_Barcodes_Medium/S3_Barcodes_Medium.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/supplemental/SupermarketSimulation/SupermarketSimulation.iml" filepath="$PROJECT_DIR$/textbook_examples/supplemental/SupermarketSimulation/SupermarketSimulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/TextFileApps/TextFileApps.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/TextFileApps/TextFileApps.iml" />
