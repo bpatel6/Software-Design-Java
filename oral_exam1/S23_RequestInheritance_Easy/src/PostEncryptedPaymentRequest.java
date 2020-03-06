@@ -1,19 +1,26 @@
 import java.util.UUID;
 
+/**
+ * The class to present PostEncryptedPaymentRequest data
+ * @see PostEncryptedPaymentRequest
+ */
 public class PostEncryptedPaymentRequest extends PostPaymentRequest {
+    /**
+     * encryptedpaymentcount - to keep track of all encrypted payment requests
+     */
     private static int encryptedpaymentcount;
-    private UUID randUUID;
-    private String randIP, randEncryptionsScheme;
-    private Payment randPayment;
+    /**
+     * randEncryptionsScheme - to save randEncryptionsScheme generated
+     */
+    private String randEncryptionsScheme;
 
-    public static int getEncryptedpaymentcount() {
-        return encryptedpaymentcount;
-    }
-
-    public static void setEncryptedpaymentcount(int encryptedpaymentcount) {
-        PostEncryptedPaymentRequest.encryptedpaymentcount = encryptedpaymentcount;
-    }
-
+    /**
+     * Constructor with randUUID, randIP, randPayment and randEncryptionScheme initialization
+     * @param randUUID UUID - to be initialized with an object
+     * @param randIP IP - to be initialized with and object
+     * @param randPayment Payment - to be initialized with an object
+     * @param randEncryptionScheme EncryptionScheme - to be initialized with an object
+     */
     public PostEncryptedPaymentRequest(UUID randUUID, String randIP, Payment randPayment, String randEncryptionScheme) {
         super();
         encryptedpaymentcount++;
@@ -26,13 +33,21 @@ public class PostEncryptedPaymentRequest extends PostPaymentRequest {
         super.randIP = randIP;
     }
 
+    /**
+     * Prints Object address, UUID, IP, Payment and Encryption Scheme info
+     * @return String with object address, UUID, IP, Payment and Encryption Scheme info
+     */
     @Override
     public String toString() {
         return super.toString() +
                 "This payment was encrypted using: " + randEncryptionsScheme;
     }
 
-    public static String count() {
-        return String.valueOf(encryptedpaymentcount);
+    /**
+     * to access the value of encryptedpaymentcount
+     * @return integer - encryptedpaymentcount var. value
+     */
+    public static int count() {
+        return encryptedpaymentcount;
     }
 }

@@ -1,10 +1,14 @@
 import java.util.Random;
 import java.util.Stack;
 
+/**
+ * The class to test all of the request type and data type for the server
+ * @see Server
+ */
 public class Server {
     private static final Integer NUM_REQ_TYPES = 9;
 
-    public static void main(String argv[]) {
+    public static void main(String[] argv) {
         Stack<Request> requestStack = new Stack<>();
         Random random = new Random();
         DataGenerator data = new DataGenerator();

@@ -1,8 +1,12 @@
+/**
+ * Implements the zipcode
+ * @see POSTNET implements the method and function of Zipcode
+ */
 public class POSTNET {
     /**
      * long zipcode: to store the input zipcode
      */
-    private long zipcode;
+    private String zipcode;
     /**
      * String Binaryzip: to store computed value of inputed zip in binary
      */
@@ -12,15 +16,15 @@ public class POSTNET {
      * To access the zipcode instance variable value
      * @return zipcode
      */
-    public long getZipcode() {
+    public String getZipcode() {
         return zipcode;
     }
 
     /**
      * To set the zipcode instance variable value
-     * @param zip code to be set to var zipcode
+     * @param zip code to be set to var. zipcode
      */
-    public void setZipcode(long zip) {
+    public void setZipcode(String zip) {
         this.zipcode = zip;
     }
 
@@ -44,7 +48,7 @@ public class POSTNET {
      * Constructor to initialize input to the zipcode var.
      * @param input zipcode to initialize
      */
-    public POSTNET(long input) {
+    public POSTNET(String input) {
         this.zipcode = input;
     }
 
@@ -54,27 +58,26 @@ public class POSTNET {
      */
     public long checkdigit() {
         long sum = 0;
-        long zip = this.zipcode;
+        int zip = Integer.parseInt(this.zipcode);
         while (zip != 0) {
             sum = sum + zip % 10;
             zip = zip / 10;
         }
         long checkdigit;
         checkdigit = 10 - (sum % 10);
-        sum = sum + checkdigit;
-        String newzip = this.zipcode + String.valueOf(checkdigit);
-        this.zipcode = Long.parseLong(newzip);
+        String newzip = this.zipcode + checkdigit;
+        this.zipcode = String.valueOf(Long.parseLong(newzip));
         return checkdigit;
     }
 
     /**
-     * Converts the given reference zip to the binary representation
+     * Converts the given reference object zipcode  to the binary representation
      * @return binary graphical representationo of the zipcode
      */
     public String ziptobinary() {
         StringBuilder binary_graphical = new StringBuilder();
         StringBuilder binary_digit = new StringBuilder();
-        String zip = Long.toString(this.zipcode);
+        String zip = this.zipcode;
         binary_graphical.append("|");
         binary_digit.append("1");
         for (int i = 0; i < zip.length(); i++) {
@@ -100,7 +103,7 @@ public class POSTNET {
                 binary_digit.append("10001");
                 binary_graphical.append("|...|");
             }
-            if (zip.charAt(i) == '8') {
+            else if (zip.charAt(i) == '8') {
                 binary_digit.append("10010");
                 binary_graphical.append("|..|.");
             } else if (zip.charAt(i) == '9') {
@@ -118,7 +121,11 @@ public class POSTNET {
         return String.valueOf(binary_graphical);
     }
 
-    public long decrypt() {
+    /**
+     * Converts the given reference object from binary to zipcode
+     * @return binary graphical representationo of the zipcode
+     */
+    public String decrypt() {
         StringBuilder zip = new StringBuilder();
         for (int i = 1; i < BinaryZip.length() - 1; i = i + 5) {
             if (BinaryZip.substring(i, i + 5).equals("00011")) {
@@ -144,6 +151,6 @@ public class POSTNET {
                 zip.append('0');
             }
         }
-        return Integer.parseInt(String.valueOf(zip));
+        return String.valueOf(zip);
     }
 }

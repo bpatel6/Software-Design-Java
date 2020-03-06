@@ -5,8 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 
 /**
- * The class to represent GuessNumber JFrame and Implementation of the logic
- *
+ * The class to represent GuessNumber JFrame and function application
  * @see GuessNumber
  */
 
@@ -16,7 +15,7 @@ public class GuessNumber extends JFrame {
      */
     private int random_n;
     /**
-     * label1 and label2 to display JLabel text on the JFrame
+     * label* to display JLabel text on the JFrame
      */
     private final JLabel label1, label2;
     /**

@@ -3,6 +3,10 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.UUID;
 
+/**
+ * The class to generate random data for various other class
+ * @see DataGenerator
+ */
 class DataGenerator {
     // fields to hold example data
     private Random rand;

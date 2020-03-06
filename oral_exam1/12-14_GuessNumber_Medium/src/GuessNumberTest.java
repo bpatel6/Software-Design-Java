@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 /**
- * The class to runs and tests the GuessNumber() implementation
+ * The class to runs and test the GuessNumber() implementation
  * @see GuessNumberTest
  */
 

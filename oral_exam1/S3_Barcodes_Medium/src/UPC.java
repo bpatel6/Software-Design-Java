@@ -1,3 +1,7 @@
+/**
+ * Implements the UPC Barcode
+ * @see UPC implements the method and functions of UPC product code
+ */
 public class UPC {
     /**
      * String upc: stores the UPC product code

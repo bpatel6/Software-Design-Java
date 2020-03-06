@@ -1,18 +1,24 @@
 import java.util.UUID;
 
+/**
+ * The class to access VideoRequest data
+ * @see GetVideoRequest
+ */
 public class GetVideoRequest extends Request {
+    /**
+     * videocount - to keep track of all video requests
+     */
     private static int videocount;
-    private UUID randUUID;
+    /**
+     * randVideo - to save randVideo generated
+     */
     private Video randVideo;
 
-    public static int getVideocount() {
-        return videocount;
-    }
-
-    public static void setVideocount(int videocount) {
-        GetVideoRequest.videocount = videocount;
-    }
-
+    /**
+     * Constructor with randUUID and randVideo initialization
+     * @param randUUID UUID - to be initialized with an object
+     * @param randVideo Video - to be initialized with an object
+     */
     public GetVideoRequest(UUID randUUID, Video randVideo) {
         videocount++;
         GetRequest.setGetcounts(GetRequest.getGetcounts() + 1);
@@ -21,12 +27,20 @@ public class GetVideoRequest extends Request {
         this.randVideo = randVideo;
     }
 
+    /**
+     * Prints Object address, UUID and Video info
+     * @return String with object address, UUID and Video info
+     */
     @Override
     public String toString() {
         return super.toString() + '\n' + randVideo;
     }
 
-    public static String count() {
-        return String.valueOf(videocount);
+    /**
+     * to access the value of videocount
+     * @return integer - videocount var. value
+     */
+    public static int count() {
+        return videocount;
     }
 }

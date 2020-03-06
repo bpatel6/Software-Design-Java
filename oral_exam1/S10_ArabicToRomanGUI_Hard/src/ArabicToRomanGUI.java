@@ -4,13 +4,32 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import static java.lang.Integer.parseInt;
 
+/**
+ * The class to represent ArabicToRomanGUI JFrame and function application
+ * @see ArabicToRomanGUI
+ */
 public class ArabicToRomanGUI extends JFrame {
-    private final JTextField text1;
-    private final JTextField text2;
+    /**
+     * text* to display JTextField on the JFrame
+     */
+    private final JTextField text1, text2;
+    /**
+     * label* to display JLabel on the JFrame
+     */
     private final JLabel label1, label2, label3;
+    /**
+     * numbers to compare numerical key entry for keylistener events
+     */
     private static final char[] numbers = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
+    /**
+     * roman to compare and validate roman ALPHABETS key entry for keylistener events
+     */
     private static final char[] roman = {'I', 'V', 'X', 'L', 'C', 'D', 'M'};
 
+    /**
+     * Constructor to initialize the window JFrame with all other properties
+     * Sets the Jlabel, JTextField, and JFrame
+     */
     public ArabicToRomanGUI() {
         super("ArabictoRoman");
         super.getContentPane().setBackground(Color.lightGray);
@@ -35,6 +54,11 @@ public class ArabicToRomanGUI extends JFrame {
         text2.addKeyListener(key);
     }
 
+    /**
+     * The class to handle key pressed event of ArabicToRomanGUI class
+     * @see keypressing
+     * keypressing also implements the KeyListener
+     */
     private class keypressing implements KeyListener {
         char i = 0;
         StringBuilder s = new StringBuilder();
@@ -110,6 +134,11 @@ public class ArabicToRomanGUI extends JFrame {
         }
     }
 
+    /**
+     * Converts the Arabic number to Roman number
+     * @param i integer to be converted to roman
+     * @return String - converted Roman number
+     */
     public String arabictoroman(int i) {
         StringBuilder output1 = new StringBuilder();
         while (i != 0) {
@@ -169,6 +198,11 @@ public class ArabicToRomanGUI extends JFrame {
         return String.valueOf(output1);
     }
 
+    /**
+     * Converts roman number to arabic
+     * @param input String to be converted to integer arabic
+     * @return String - converted integer from roman number
+     */
     public String romantoarabic(String input) {
         int number = 0;
         for (int i = 0; i < input.length(); i++) {
@@ -186,6 +220,11 @@ public class ArabicToRomanGUI extends JFrame {
         return String.valueOf(number);
     }
 
+    /**
+     * Helper function to compute integer number for the given alphabets
+     * @param n char - roman character to be computed
+     * @return integer - corresponding value for input roman alphabet
+     */
     public int value(char n) {
         int i = 0;
         if (n == 'M') {
@@ -206,6 +245,11 @@ public class ArabicToRomanGUI extends JFrame {
         return i;
     }
 
+    /**
+     * Helper function to check key pressed is a numeric key
+     * @param input char - a key pressed character
+     * @return boolean - if key is valid return true otherwise return false
+     */
     public boolean checkkeynumber(char input) {
         for (char key : numbers) {
             if (input == key) {
@@ -215,6 +259,11 @@ public class ArabicToRomanGUI extends JFrame {
         return false;
     }
 
+    /**
+     * Helper function to check key pressed is a valid roman numeral key
+     * @param input char - a key pressed character
+     * @return boolean - if key is valid return true otherwise return false
+     */
     public boolean checkkeyroman(char input) {
         for (char c : roman) {
             if (input == c) {

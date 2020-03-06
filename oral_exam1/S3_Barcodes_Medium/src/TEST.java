@@ -9,33 +9,42 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TEST {
     @Test
     void zipcode1() {
-        POSTNET p1 = new POSTNET(52241);
-        assertEquals(52241, p1.getZipcode());
+        POSTNET p1 = new POSTNET("52241");
+        assertEquals("52241", p1.getZipcode());
         assertEquals(6, p1.checkdigit());
-        assertEquals(522416, p1.getZipcode());
+        assertEquals("522416", p1.getZipcode());
         assertEquals("|.|.|...|.|..|.|.|..|...||.||..|", p1.ziptobinary());
         assertEquals("10101000101001010100100011011001", p1.getBinaryZip());
-        assertEquals(522416, p1.decrypt());
+        assertEquals("522416", p1.decrypt());
     }
 
     @Test
     void zipcode2() {
-        POSTNET p1 = new POSTNET(52242);
-        assertEquals(52242, p1.getZipcode());
+        POSTNET p1 = new POSTNET("52242");
+        assertEquals("52242", p1.getZipcode());
         assertEquals(5, p1.checkdigit());
-        assertEquals(522425, p1.getZipcode());
+        assertEquals("522425", p1.getZipcode());
         assertEquals("|.|.|...|.|..|.|.|..|..|.|.|.|.|", p1.ziptobinary());
         assertEquals("10101000101001010100100101010101", p1.getBinaryZip());
-        assertEquals(522425, p1.decrypt());
+        assertEquals("522425", p1.decrypt());
     }
 
     @Test
     void zipcode3() {
-        POSTNET p1 = new POSTNET(522416201);
-        assertEquals(522416201, p1.getZipcode());
+        POSTNET p1 = new POSTNET("522416201");
+        assertEquals("522416201", p1.getZipcode());
         assertEquals("|.|.|...|.|..|.|.|..|...||.||....|.|||......|||", p1.ziptobinary());
         assertEquals("10101000101001010100100011011000010111000000111", p1.getBinaryZip());
-        assertEquals(522416201, p1.decrypt());
+        assertEquals("522416201", p1.decrypt());
+    }
+
+    @Test
+    void zipcode4() {
+        POSTNET p1 = new POSTNET("5224162015");
+        assertEquals("5224162015", p1.getZipcode());
+        assertEquals("|.|.|...|.|..|.|.|..|...||.||....|.|||......||.|.|.|", p1.ziptobinary());
+        assertEquals("1010100010100101010010001101100001011100000011010101", p1.getBinaryZip());
+        assertEquals("5224162015", p1.decrypt());
     }
 
     @Test
