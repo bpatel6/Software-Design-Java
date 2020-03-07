@@ -1,6 +1,5 @@
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * TEST class to test the functionality of POSTNET and UPC class
@@ -8,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class TEST {
     @Test
-    void zipcode1() {
+    public void zipcode1() {
         POSTNET p1 = new POSTNET("52241");
         assertEquals("52241", p1.getZipcode());
         assertEquals(6, p1.checkdigit());
@@ -19,7 +18,7 @@ public class TEST {
     }
 
     @Test
-    void zipcode2() {
+    public void zipcode2() {
         POSTNET p1 = new POSTNET("52242");
         assertEquals("52242", p1.getZipcode());
         assertEquals(5, p1.checkdigit());
@@ -30,7 +29,7 @@ public class TEST {
     }
 
     @Test
-    void zipcode3() {
+    public void zipcode3() {
         POSTNET p1 = new POSTNET("522416201");
         assertEquals("522416201", p1.getZipcode());
         assertEquals("|.|.|...|.|..|.|.|..|...||.||....|.|||......|||", p1.ziptobinary());
@@ -39,7 +38,7 @@ public class TEST {
     }
 
     @Test
-    void zipcode4() {
+    public void zipcode4() {
         POSTNET p1 = new POSTNET("5224162015");
         assertEquals("5224162015", p1.getZipcode());
         assertEquals("|.|.|...|.|..|.|.|..|...||.||....|.|||......||.|.|.|", p1.ziptobinary());
@@ -48,7 +47,7 @@ public class TEST {
     }
 
     @Test
-    void UPC1() {
+    public void UPC1() {
         UPC u1 = new UPC("01254667375");
         assertEquals(4, u1.checkdigit());
         assertEquals("012546673754", u1.getupc());
@@ -57,7 +56,7 @@ public class TEST {
     }
 
     @Test
-    void UPC2() {
+    public void UPC2() {
         UPC u2 = new UPC("54862532150");
         assertEquals(1, u2.checkdigit());
         assertEquals("548625321501", u2.getupc());
