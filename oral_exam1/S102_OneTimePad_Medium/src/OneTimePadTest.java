@@ -24,5 +24,10 @@ public class OneTimePadTest {
         System.out.println("Cipher: " + p4.encryptmedium());
         System.out.println("Decrypted: " + p4.decryptmedium());
 
+        System.out.println("TEST 5: - MEDIUM: MEET ME AT THREE");
+        OneTimePad p5 = new OneTimePad("MEET ME AT THREE");
+        System.out.println("Cipher: " + p5.encryptmedium());
+        System.out.println("Decrypted: " + p5.decryptmedium());
+
     }
 }
