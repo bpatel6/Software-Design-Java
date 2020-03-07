@@ -10,9 +10,10 @@ import static java.lang.Integer.parseInt;
  */
 public class ArabicToRomanGUI extends JFrame {
     /**
-     * text* to display JTextField on the JFrame
+     * text* to display JTextArea on the JFrame
      */
-    private final JTextField text1, text2;
+    private final JTextArea text1;
+    private final JTextArea text2;
     /**
      * label* to display JLabel on the JFrame
      */
@@ -28,14 +29,14 @@ public class ArabicToRomanGUI extends JFrame {
 
     /**
      * Constructor to initialize the window JFrame with all other properties
-     * Sets the Jlabel, JTextField, and JFrame
+     * Sets the Jlabel, JTextArea, and JFrame
      */
     public ArabicToRomanGUI() {
         super("ArabictoRoman");
         super.getContentPane().setBackground(Color.lightGray);
         setLayout(null);
-        text1 = new JTextField(15);
-        text2 = new JTextField(15);
+        text1 = new JTextArea(1,15);
+        text2 = new JTextArea(1,15);
         label1 = new JLabel("ARABIC OR ROMAN CONVERTER");
         label2 = new JLabel("Arabic-#");
         label3 = new JLabel("Roman-#");
