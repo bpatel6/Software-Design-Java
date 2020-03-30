@@ -22,4 +22,8 @@ public class ScoringMethod extends Game{
     public void setMethodPoints(int methodPoints) {
         MethodPoints = methodPoints;
     }
+
+    public String toString() {
+        return Method;
+    }
 }

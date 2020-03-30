@@ -1,5 +1,4 @@
 
-
 /**
  * @see Game
  */
@@ -7,6 +6,9 @@
 public class Game {
     private static Team Home;
     private static Team Away;
+    private static ScoringMethod[] methods;
+    private static Team[] teams;
+
     public Game(){
     }
 
@@ -34,21 +36,44 @@ public class Game {
         Away = away;
     }
 
-    public ScoringMethod getScoringMethod(int index){
+    public void getScoringMethod(){
         if (this instanceof Football){
-            return Football.getFootballMethod(index);
+            methods = Football.getFootballMethod();
         }
-        return null;
+        else if (this instanceof Basketball){
+            methods = Basketball.getBasketballMethods();
+        }
+        else if (this instanceof Soccer){
+            methods = Soccer.getSoccerMethods();
+        }
+        else {
+            methods = Hockey.getHockeyMethods();
+        }
+        teams = new Team[methods.length];
+        for (int i = 0; i < methods.length; i++){
+            if (i < methods.length/2){
+                teams[i] = Home;
+            }
+            else {
+                teams[i] = Away;
+            }
+        }
     }
 
-    public String getScoringMethod(){
-        if (this instanceof Football){
-            return Football.PrintMethods();
-        }
-        return null;
+    public void printMethods(){
+            for (int i = 0; i < methods.length; i++) {
+                System.out.println((i + 1) + " " + teams[i].toString() + " " + methods[i].toString());
+            }
     }
 
-    public void addScore(Team team, ScoringMethod score){
+    public static void addScoreHelper(ScoringMethod score, Team team){
         team.setScore(team.getScore() + score.getMethodPoints());
+    }
+
+    public static void addScore(int index) {
+        if ((index-1 > methods.length-1) || (index-1 < 0)){
+            throw new IndexOutOfBoundsException("Option is not valid");
+        }
+        addScoreHelper(methods[index-1],teams[index-1]);
     }
 }

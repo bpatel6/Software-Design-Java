@@ -1,32 +1,23 @@
 public class Football extends Game {
-    private static ScoringMethod[] FootballMethods = new ScoringMethod[4];
+    private static final ScoringMethod[] FootballMethods = new ScoringMethod[5];
     public Football(Team home, Team away){
         Game.setHome(home);
         Game.setAway(away);
         FootballMethods[0] = new ScoringMethod("TouchDown",6);
         FootballMethods[1] = new ScoringMethod("Field Goal", 3);
-        FootballMethods[2] = new ScoringMethod("Safety", 2);
-        FootballMethods[3] = new ScoringMethod("Extra Point",1);
+        FootballMethods[2] = new ScoringMethod("Two-Point Conversion", 2);
+        FootballMethods[3] = new ScoringMethod("Safety", 2);
+        FootballMethods[4] = new ScoringMethod("Extra Point",1);
 
     }
 
-    public static ScoringMethod getFootballMethod(int index){
-        return FootballMethods[index];
-    }
-
-    public static String PrintMethods(){
-        StringBuilder hometeam = new StringBuilder();
-        StringBuilder awayteam = new StringBuilder();
+    public static ScoringMethod[] getFootballMethod(){
+        ScoringMethod[] GameFootballMethods = new ScoringMethod[FootballMethods.length * 2];
         for (int i = 0; i < FootballMethods.length; i++){
-            if (i < FootballMethods.length-1) {
-                hometeam.append(Game.getHome() + " " + FootballMethods[i].getMethod()).append('\n');
-                awayteam.append(Game.getAway() + " " + FootballMethods[i].getMethod()).append('\n');
-            }
-            else {
-                hometeam.append(Game.getHome() + " " + FootballMethods[i].getMethod());
-                awayteam.append(Game.getAway() + " " + FootballMethods[i].getMethod());
-            }
+            GameFootballMethods[i] = FootballMethods[i];
+            GameFootballMethods[i+FootballMethods.length] = FootballMethods[i];
         }
-        return hometeam + "\n" + awayteam;
+        return GameFootballMethods;
     }
+
 }
