@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class GameTest {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Scanner input  = new Scanner(System.in);
         System.out.println("Select the type of game:");
         System.out.println("1: Football \n2: Soccer\n3: Basketball\n4: Hockey");
@@ -25,15 +25,22 @@ public class GameTest {
             first_game = new Hockey(new Team(home), new Team(away));
         }
         assert first_game != null;
-        boolean game = true;
         System.out.println(first_game.getTeams());
-        while (game != false) {
+        first_game.getScoringMethod();
+        first_game.startGame();
+        while (!first_game.isGameover()) {
             System.out.println(first_game.getScores());
-            first_game.getScoringMethod();
+            System.out.println(first_game.getPeriodName(first_game.getCurrentPeriod()));
             first_game.printMethods();
+            System.out.println(first_game.endQuarterHelper() + " " + "End Quarter");
             System.out.println("Choose Option: ");
             int option = input.nextInt();
-            first_game.addScore(option);
+            if (option == first_game.endQuarterHelper()){
+                first_game.endCurrentPeriod();
+            }
+            else {
+                first_game.addScore(option);
+            }
         }
     }
 }
