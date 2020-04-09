@@ -53,7 +53,6 @@ public class RandomCircle extends JFrame {
             diameter = radius * 2;
             circumference = (int) (2 * Math.PI * radius);
             area = (int) (Math.PI * radius * radius);
-            setSize(200, 200);
         }
 
         /**
