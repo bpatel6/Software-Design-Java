@@ -17,86 +17,90 @@ public class RandomCircle extends JFrame {
         add(circle, BorderLayout.CENTER);
         add(circleInfo, BorderLayout.SOUTH);
     }
-}
 
-/**
- * Subclass of the RandomCircle to draw a circle
- * @see Circle
- */
-class Circle extends JPanel {
-    /**
-     * Stores the radius of the Circle
-     */
-    private int radius;
 
     /**
-     * Stores the diameter of the Circle
+     * Subclass of the RandomCircle to draw a circle
+     *
+     * @see Circle
      */
-    private int diameter;
+    static class Circle extends JPanel {
+        /**
+         * Stores the radius of the Circle
+         */
+        private int radius;
 
-    /**
-     * Stores the circumference of the Circle
-     */
-    private int circumference;
+        /**
+         * Stores the diameter of the Circle
+         */
+        private int diameter;
 
-    /**
-     * Stores the area of the Circle
-     */
-    private int area;
+        /**
+         * Stores the circumference of the Circle
+         */
+        private int circumference;
 
-    /**
-     * Constructor to generate a random circle and draws circle Jpanel
-     */
-    public Circle() {
-            radius = (int) (1 + Math.random() * 300);
+        /**
+         * Stores the area of the Circle
+         */
+        private int area;
+
+        /**
+         * Constructor to generate a random circle and draws circle Jpanel
+         */
+        public Circle() {
+            radius = (int) (1 + Math.random() * 200);
             diameter = radius * 2;
             circumference = (int) (2 * Math.PI * radius);
             area = (int) (Math.PI * radius * radius);
-            setSize(300, 300);
+            setSize(200, 200);
         }
 
-    /**
-     * Draws a circle
-     * @param g Abstract Graphics class
-     */
-    public void paintComponent(Graphics g) {
+        /**
+         * Draws the circle
+         * @param g Abstract Graphics class
+         */
+        public void paintComponent(Graphics g) {
             g.drawOval(0, 0, radius, radius);
             g.setColor(Color.CYAN);
-            g.fillOval(0,0,radius,radius);
+            g.fillOval(0, 0, radius, radius);
         }
 
-    /**
-     * Access the circle radius
-     * @return radius
-     */
-    public int getRadius() {
+        /**
+         * Access the circle radius
+         *
+         * @return radius
+         */
+        public int getRadius() {
             return radius;
         }
 
-    /**
-     * Access the circle diameter
-     * @return diameter
-     */
-    public int getDiameter() {
+        /**
+         * Access the circle diameter
+         *
+         * @return diameter
+         */
+        public int getDiameter() {
             return diameter;
         }
 
-    /**
-     * Access the circle circumference
-     * @return circumference
-     */
-    public int getCircumference() {
+        /**
+         * Access the circle circumference
+         *
+         * @return circumference
+         */
+        public int getCircumference() {
             return circumference;
         }
 
-    /**
-     * Access the circle area
-     * @return area
-     */
-    public int getArea() {
+        /**
+         * Access the circle area
+         *
+         * @return area
+         */
+        public int getArea() {
             return area;
         }
-
+    }
 }
-
 

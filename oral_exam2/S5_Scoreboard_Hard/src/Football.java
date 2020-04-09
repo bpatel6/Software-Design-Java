@@ -1,5 +1,18 @@
+/**
+ * The class to represent Football scoring methods
+ * @see Basketball
+ */
 public class Football extends Game {
+    /**
+     * Stores the football scoring methods
+     */
     private static final ScoringMethod[] FootballMethods = new ScoringMethod[5];
+
+    /**
+     * Constructor to initialize teams and scoring methods
+     * @param home - home team
+     * @param away - away team
+     */
     public Football(Team home, Team away){
         Game.setHome(home);
         Game.setAway(away);
@@ -11,6 +24,10 @@ public class Football extends Game {
 
     }
 
+    /**
+     * Access the football methods
+     * @return array of all football methods
+     */
     public static ScoringMethod[] getFootballMethod(){
         ScoringMethod[] GameFootballMethods = new ScoringMethod[FootballMethods.length * 2];
         for (int i = 0; i < FootballMethods.length; i++){

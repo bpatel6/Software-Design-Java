@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+/**
+ * The class to runs and test the implementation of scoreboard
+ * @see GameTest
+ */
+
 public class GameTest {
     public static void main(String[] args) {
         Scanner input  = new Scanner(System.in);
