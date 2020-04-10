@@ -14,6 +14,9 @@ public class RandomCircle extends JFrame {
         JTextArea circleInfo = new JTextArea();
         Circle circle = new Circle();
         circleInfo.setText("The Radius is: " + circle.getRadius() + "\nThe Diameter is: " + circle.getDiameter() + "\nThe Circumference is: " + circle.getCircumference() + "\n The Area is: " + circle.getArea());
+        circleInfo.setBackground(Color.YELLOW);
+        circleInfo.setEditable(false);
+        //System.out.println(circle.getSize());
         add(circle, BorderLayout.CENTER);
         add(circleInfo, BorderLayout.SOUTH);
     }
@@ -21,7 +24,6 @@ public class RandomCircle extends JFrame {
 
     /**
      * Subclass of the RandomCircle to draw a circle
-     *
      * @see Circle
      */
     static class Circle extends JPanel {
@@ -85,7 +87,6 @@ public class RandomCircle extends JFrame {
 
         /**
          * Access the circle circumference
-         *
          * @return circumference
          */
         public int getCircumference() {
@@ -94,7 +95,6 @@ public class RandomCircle extends JFrame {
 
         /**
          * Access the circle area
-         *
          * @return area
          */
         public int getArea() {

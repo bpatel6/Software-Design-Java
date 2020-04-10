@@ -232,4 +232,12 @@ public class Game {
     public int endQuarterHelper(){
         return methods.length + 1;
     }
+
+    /**
+     * Access the methods array
+     * @return array of scoringmethods
+     */
+    public static ScoringMethod[] getMethods() {
+        return methods;
+    }
 }
