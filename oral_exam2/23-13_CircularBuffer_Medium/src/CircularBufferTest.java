@@ -11,7 +11,7 @@ public class CircularBufferTest {
         ExecutorService executorService = Executors.newCachedThreadPool();
 
         // create CircularBuffer to store ints
-        CircularBuffer sharedLocation = new CircularBuffer();
+        LockedConditionCircularBuffer sharedLocation = new LockedConditionCircularBuffer();
 
         // display the initial state of the CircularBuffer
         sharedLocation.displayState("Initial State");
