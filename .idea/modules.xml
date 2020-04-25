@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/12-14_GuessNumber_Medium/12-14_GuessNumber_Medium.iml" filepath="$PROJECT_DIR$/oral_exam1/12-14_GuessNumber_Medium/12-14_GuessNumber_Medium.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oral_exam2/18-20_MazeTraversal_Hard/18-20_MazeTraversal_Hard.iml" filepath="$PROJECT_DIR$/oral_exam2/18-20_MazeTraversal_Hard/18-20_MazeTraversal_Hard.iml" />
       <module fileurl="file://$PROJECT_DIR$/quizzes/20200217-Quiz/20200217-Quiz.iml" filepath="$PROJECT_DIR$/quizzes/20200217-Quiz/20200217-Quiz.iml" />
       <module fileurl="file://$PROJECT_DIR$/quizzes/20200217-Quiz/20200217-Quiz1.iml" filepath="$PROJECT_DIR$/quizzes/20200217-Quiz/20200217-Quiz1.iml" />
       <module fileurl="file://$PROJECT_DIR$/quizzes/20200217-Quiz/20200217-Quiz2.iml" filepath="$PROJECT_DIR$/quizzes/20200217-Quiz/20200217-Quiz2.iml" />
@@ -66,6 +67,7 @@
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/S102_OneTimePad_Medium/S102_OneTimePad_Medium.iml" filepath="$PROJECT_DIR$/oral_exam1/S102_OneTimePad_Medium/S102_OneTimePad_Medium.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/S10_ArabicToRomanGUI_Hard/S10_ArabicToRomanGUI_Hard.iml" filepath="$PROJECT_DIR$/oral_exam1/S10_ArabicToRomanGUI_Hard/S10_ArabicToRomanGUI_Hard.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/S23_RequestInheritance_Easy/S23_RequestInheritance_Easy.iml" filepath="$PROJECT_DIR$/oral_exam1/S23_RequestInheritance_Easy/S23_RequestInheritance_Easy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oral_exam2/S35_GraphAlgos_Easy/S35_GraphAlgos_Easy.iml" filepath="$PROJECT_DIR$/oral_exam2/S35_GraphAlgos_Easy/S35_GraphAlgos_Easy.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/S3_Barcodes_Medium/S3_Barcodes_Medium.iml" filepath="$PROJECT_DIR$/oral_exam1/S3_Barcodes_Medium/S3_Barcodes_Medium.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam2/S5_Scoreboard_Hard/S5_Scoreboard_Hard.iml" filepath="$PROJECT_DIR$/oral_exam2/S5_Scoreboard_Hard/S5_Scoreboard_Hard.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" />
