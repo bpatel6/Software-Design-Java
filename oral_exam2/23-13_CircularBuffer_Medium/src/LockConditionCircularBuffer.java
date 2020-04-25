@@ -4,7 +4,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 // Fig. 23.18: CircularBuffer.java
 // Synchronizing access to a shared three-element bounded buffer.
-public class LockedConditionCircularBuffer implements Buffer {
+public class LockConditionCircularBuffer implements Buffer {
     private final int[] buffer = {-1, -1, -1}; // shared buffer
 
     private int occupiedCells = 0; // count number of buffers used
