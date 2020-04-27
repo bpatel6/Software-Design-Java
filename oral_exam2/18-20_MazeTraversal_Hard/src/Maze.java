@@ -39,4 +39,33 @@ public class Maze {
         }
     }
 
+    public static MazePoint[][] charToPoint(char[][] maze){
+        MazePoint[][] points = new MazePoint[rows][columns];
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < columns; j++){
+                points[i][j] = new MazePoint(i,j,maze[i][j]);
+            }
+        }
+        return points;
+    }
+
+    public static char[][] pointToChar(MazePoint[][] maze){
+        char[][] charmaze = new char[rows][columns];
+        for (int i = 0; i < rows; i++){
+            for(int j = 0; j < columns; j++){
+                charmaze[i][j] = maze[i][j].getData();
+            }
+        }
+        return charmaze;
+    }
+
+    public static void printMaze(char[][] maze){
+        for (int i = 0; i < rows; i++){
+            for (int j = 0; j < columns; j++){
+                System.out.print(maze[i][j]);
+                System.out.print(' ');
+            }
+            System.out.println(' ');
+        }
+    }
 }

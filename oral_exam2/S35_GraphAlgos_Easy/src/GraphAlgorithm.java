@@ -1,13 +1,14 @@
 import java.io.*;
 
-public class GraphAlgos {
+public class GraphAlgorithm {
     private static String [] words;
+    private static int average;
     private static int [] connections = new int[5757];
     public static void readFile() throws FileNotFoundException {
         words = new String[5757];
         BufferedReader reader;
        try{
-           reader = new BufferedReader(new FileReader(GraphAlgos.class.getResource("words.dat").getFile()));
+           reader = new BufferedReader(new FileReader(GraphAlgorithm.class.getResource("words.dat").getFile()));
            String line = reader.readLine();
            words[0] = line;
            int i = 1;
@@ -23,8 +24,7 @@ public class GraphAlgos {
        }
     }
 
-    public static void zeroVertices(){
-        int zerovertices = 0;
+    public static void findEdges(){
         StringBuilder adjecent;
        for (int i = 0; i < words.length; i++){
            adjecent = new StringBuilder();
@@ -38,26 +38,34 @@ public class GraphAlgos {
                System.out.println(words[i] + " adjacent to " + adjecent.deleteCharAt(adjecent.length()-2));
            }
        }
-       for (int i = 0; i < connections.length; i++){
-           if (connections[i] == 0){
-               zerovertices++;
-           }
-       }
-      System.out.println(zerovertices);
     }
 
-    public static int averageVertices(){
+    public static void zeroVertices(){
+        int zerovertices = 0;
+        for (int i = 0; i < connections.length; i++){
+            if (connections[i] == 0){
+                zerovertices++;
+            }
+        }
+        System.out.println("--------------------------------");
+        System.out.println("Number of vertices with 0 edge: " + zerovertices);
+    }
+
+    public static void averageVertices(){
         int total = 0;
         for(int i = 0; i < connections.length; i++){
             total += connections[i];
         }
-        return total/5757;
+        average = total/5757;
+        System.out.println("-------------------------------------");
+        System.out.println("Average number of Edge vertices has: " + average);
     }
 
     public static void hasMostVertices(){
-        System.out.println("Word that has the most vertices");
+        System.out.println("--------------------------------");
+        System.out.println("Words that has the most vertices:");
         for (int i = 0; i < connections.length; i++){
-            if (connections[i] > averageVertices()){
+            if (connections[i] > average){
                 System.out.println(words[i] + " " + connections[i]);
             }
         }
@@ -75,6 +83,5 @@ public class GraphAlgos {
             return difference == 1;
         }
             return false;
-
     }
 }
