@@ -50,13 +50,13 @@ public class Maze {
     }
 
     public static char[][] pointToChar(MazePoint[][] maze){
-        char[][] charmaze = new char[rows][columns];
+        char[][] charMaze = new char[rows][columns];
         for (int i = 0; i < rows; i++){
             for(int j = 0; j < columns; j++){
-                charmaze[i][j] = maze[i][j].getData();
+                charMaze[i][j] = maze[i][j].getData();
             }
         }
-        return charmaze;
+        return charMaze;
     }
 
     public static void printMaze(char[][] maze){
@@ -67,5 +67,34 @@ public class Maze {
             }
             System.out.println(' ');
         }
+    }
+
+    public static boolean mazeTraversal(char[][] Maze, int currentRow, int currentColumn){
+        boolean gameOver = false;
+        MazePoint[][] pointMaze = charToPoint(Maze);
+        MazePoint currentPoint = pointMaze[currentRow][currentColumn];
+        Maze[currentRow][currentColumn] = 'x';
+        //printMaze(Maze);
+        if(getRight(currentPoint,pointMaze) == 'E'){
+            gameOver = true;
+        }
+
+        if(getRight(currentPoint,pointMaze) == '.' && !gameOver){
+            gameOver = mazeTraversal(Maze, currentRow, currentColumn + 1);
+        }
+
+        if(getLeft(currentPoint,pointMaze) == '.' && !gameOver){
+            gameOver = mazeTraversal(Maze, currentRow, currentColumn - 1);
+        }
+
+        if(getUp(currentPoint,pointMaze) == '.' && !gameOver){
+            gameOver = mazeTraversal(Maze, currentRow-1, currentColumn);
+        }
+
+        if(getDown(currentPoint,pointMaze) == '.' && !gameOver){
+            gameOver = mazeTraversal(Maze, currentRow+1, currentColumn);
+        }
+
+        return gameOver;
     }
 }

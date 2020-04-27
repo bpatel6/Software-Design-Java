@@ -48,7 +48,7 @@ public class TicTacToeServer extends JFrame {
         currentPlayer = PLAYER_X; // set current player to first player
 
         try {
-            server = new ServerSocket(12345, 2); // set up ServerSocket
+            server = new ServerSocket(5000, 2); // set up ServerSocket
         } catch (IOException ioException) {
             ioException.printStackTrace();
             System.exit(1);
