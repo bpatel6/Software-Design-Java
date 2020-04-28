@@ -71,4 +71,9 @@ public class Card {
             this.face = "K";
         }
     }
+
+    @Override
+    public String toString() {
+        return face + " of " + suit;
+    }
 }

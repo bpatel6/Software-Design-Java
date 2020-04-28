@@ -2,7 +2,7 @@ import java.io.*;
 
 public class GraphAlgorithm {
     private static String [] words;
-    private static int average;
+    private static double average;
     private static int [] connections = new int[5757];
     public static void readFile() throws FileNotFoundException {
         words = new String[5757];
@@ -34,9 +34,9 @@ public class GraphAlgorithm {
                     connections[i] = connections[i] + 1;
                }
            }
-           if (connections[i] != 0){
+           /*if (connections[i] != 0){
                System.out.println(words[i] + " adjacent to " + adjecent.deleteCharAt(adjecent.length()-2));
-           }
+           }*/
        }
     }
 
@@ -52,7 +52,7 @@ public class GraphAlgorithm {
     }
 
     public static void averageVertices(){
-        int total = 0;
+        double total = 0;
         for(int i = 0; i < connections.length; i++){
             total += connections[i];
         }
@@ -65,7 +65,7 @@ public class GraphAlgorithm {
         System.out.println("--------------------------------");
         System.out.println("Words that has the most vertices:");
         for (int i = 0; i < connections.length; i++){
-            if (connections[i] > average){
+            if (connections[i] == 25){
                 System.out.println(words[i] + " " + connections[i]);
             }
         }
