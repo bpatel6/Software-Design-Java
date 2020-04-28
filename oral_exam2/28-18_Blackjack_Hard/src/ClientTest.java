@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class ClientTest {
     public static void main(String[] args){
         Client application;
@@ -7,6 +9,7 @@ public class ClientTest {
         else {
             application = new Client(args[0]);
         }
+        application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         application.runClient();
     }
 }

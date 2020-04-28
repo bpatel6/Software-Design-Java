@@ -9,7 +9,6 @@ import java.net.ServerSocket;
 
 
 public class Server extends JFrame {
-    private JTextField enterField;
     private JTextArea displayArea;
     private ObjectOutputStream output;
     private ObjectInputStream input;
@@ -18,17 +17,6 @@ public class Server extends JFrame {
 
     public Server() {
         super("BlackJack Server");
-        enterField = new JTextField();
-        enterField.addActionListener(
-                new ActionListener() {
-                    // send message to client
-                    public void actionPerformed(ActionEvent event) {
-                        enterField.setText("");
-                    }
-                }
-        );
-
-        add(enterField, BorderLayout.SOUTH);
         displayArea = new JTextArea(); // create displayArea
         displayArea.setEditable(false);
         displayArea.setText("Welcome to BlackJack");
