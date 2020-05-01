@@ -3,5 +3,7 @@ public class DeckTest {
         Deck i = new Deck();
         i.shuffle();
         i.printDeck();
+        System.out.println(i.getCard().toString());
+        System.out.println(i.getCard().toString());
     }
 }
