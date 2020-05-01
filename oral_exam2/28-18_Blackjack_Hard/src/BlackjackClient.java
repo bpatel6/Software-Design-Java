@@ -9,7 +9,7 @@ import java.util.Formatter;
 import java.util.Scanner;
 
 
-public class Client extends JFrame implements ActionListener {
+public class BlackjackClient extends JFrame implements ActionListener {
 
     private Scanner input;
     private Formatter output;
@@ -19,12 +19,14 @@ public class Client extends JFrame implements ActionListener {
     private JTextField inputArea;
     private int helper;
 
-    Client(String address) {
+    BlackjackClient(String address) {
         super("Player");
         displayArea = new JTextArea();
         displayArea.setEditable(false);
+        displayArea.setBackground(Color.CYAN);
         add(new JScrollPane(displayArea), BorderLayout.CENTER);
         inputArea = new JTextField();
+        inputArea.setBackground(Color.lightGray);
         inputArea.addActionListener(this);
         add(inputArea, BorderLayout.SOUTH);
         setSize(300, 300);

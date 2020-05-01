@@ -9,16 +9,17 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
-public class Server extends JFrame {
+public class BlackjackServer extends JFrame {
     private ServerSocket server;
     private ExecutorService service;
     private Player[] players;
     private JTextArea displayArea;
 
-    public Server() {
+    public BlackjackServer() {
         super("Dealer");
         displayArea = new JTextArea();
         displayArea.setEditable(false);
+        displayArea.setBackground(Color.CYAN);
         displayArea.setText("Welcome to Blackjack!!\nWaiting for Player!!");
         add(new JScrollPane(displayArea), BorderLayout.CENTER);
         setSize(300, 300);
@@ -95,7 +96,6 @@ public class Server extends JFrame {
             Deck deck = new Deck();
             int playerTotal = 0;
             int dealerTotal = 0;
-            boolean game = false;
             Card card;
 
             while (inputString.hasNextLine()) {
@@ -105,40 +105,6 @@ public class Server extends JFrame {
                     playerDisconnects = true;
                     closeConnection();
                 } else if (!playerDisconnects) {
-
-                    if (inputMessage.contains("Play")) {
-                        game = true;
-                    }
-
-                    if (game) {
-                        playerTotal = 0;
-                        dealerTotal = 0;
-                        deck.shuffle();
-                        card = deck.getCard();
-                        playerTotal += card.getValue();
-                        displayMessage("Player: " + card.toString());
-                        output.format("Server: Player: " + card.toString() + "\n");
-                        output.flush();
-
-
-                        card = deck.getCard();
-                        dealerTotal += card.getValue();
-                        displayMessage("Dealer: " + card.toString());
-                        output.format("Server: Dealer: " + card.toString() + "\n");
-                        output.flush();
-
-                        card = deck.getCard();
-                        playerTotal += card.getValue();
-                        displayMessage("Player: " + card.toString());
-                        output.format("Draws: " + card.toString() + "\n");
-                        output.flush();
-
-
-                        card = deck.getCard();
-                        dealerTotal += card.getValue();
-
-                        game = false;
-                    }
 
                     if (inputMessage.contains("Stay")) {
                         while (dealerTotal < 16) {
@@ -163,7 +129,8 @@ public class Server extends JFrame {
                             output.format("Winner: Player Wins!! Player: " + playerTotal + " Dealer: " + dealerTotal + "\n");
                             output.flush();
                         }
-                    } else if (inputMessage.contains("Hit")) {
+                    }
+                    else if (inputMessage.contains("Hit")) {
                         if (playerTotal < 21) {
                             card = deck.getCard();
                             playerTotal += card.getValue();
@@ -177,8 +144,35 @@ public class Server extends JFrame {
                             output.flush();
                         }
                     }
+                    else {
+                        playerTotal = 0;
+                        dealerTotal = 0;
+                        deck.shuffle();
+                        card = deck.getCard();
+                        playerTotal += card.getValue();
+                        displayMessage("Player: " + card.toString());
+                        output.format("Server: Player: " + card.toString() + "\n");
+                        output.flush();
+
+                        card = deck.getCard();
+                        dealerTotal += card.getValue();
+                        displayMessage("Dealer: " + card.toString());
+                        output.format("Server: Dealer: " + card.toString() + "\n");
+                        output.flush();
+
+                        card = deck.getCard();
+                        playerTotal += card.getValue();
+                        displayMessage("Player: " + card.toString());
+                        output.format("Draws: " + card.toString() + "\n");
+                        output.flush();
+
+                        card = deck.getCard();
+                        dealerTotal += card.getValue();
+
+                    }
                 } else {
                     closeConnection();
+                    break;
                 }
             }
         }

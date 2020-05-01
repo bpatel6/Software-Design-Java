@@ -1,9 +1,8 @@
 import javax.swing.*;
-import java.io.IOException;
 
-public class TestServer {
+public class BlackjackServerTest {
     public static void main(String[] args) {
-        Server application = new Server();
+        BlackjackServer application = new BlackjackServer();
         application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         application.execute();
     }
