@@ -56,21 +56,26 @@ public class Card {
             this.face = "10";
         }
         else if (value == 11){
-            this.value = value;
+            this.value = 10;
             this.suit = suit;
             this.face = "J";
         }
         else if (value == 12){
-            this.value = value;
+            this.value = 10;
             this.suit = suit;
             this.face = "Q";
         }
         else if (value == 13){
-            this.value = value;
+            this.value = 10;
             this.suit = suit;
             this.face = "K";
         }
     }
+
+    public int getValue() {
+        return value;
+    }
+
 
     @Override
     public String toString() {
