@@ -101,7 +101,7 @@ public class Server extends JFrame {
                 if (inputString.hasNextLine()) {
                     inputMessage = inputString.nextLine();
 
-                    if (inputMessage.contains("Quit")) { playerDisconnects = true; }
+                    if (inputMessage.contains("Quit")) { playerDisconnects = true;}
 
                     if (!playerDisconnects) { //if client is terminating, skip all of this
 
@@ -146,8 +146,8 @@ public class Server extends JFrame {
                                 output.flush();
                             }
                             if(playerTotal > 21){
-                                displayMessage("Player busted! Dealer wins!");
-                                output.format("Winner: Player busted! Dealer wins!\n");
+                                displayMessage("Player busted! Dealer wins!\nDealer: " + dealerTotal + " Player: " + playerTotal);
+                                output.format("Winner: Player busted! Dealer wins! Dealer: " + dealerTotal + " Player: "+ playerTotal + "\n");
                                 output.flush();
                             }
                         }

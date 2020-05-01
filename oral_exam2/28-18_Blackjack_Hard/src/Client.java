@@ -57,7 +57,7 @@ public class Client extends JFrame implements ActionListener{
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            displayMessage("Closing connection to server");
+            displayMessage("Closing connection to Dealer");
             closeConnection();
         }
     }
