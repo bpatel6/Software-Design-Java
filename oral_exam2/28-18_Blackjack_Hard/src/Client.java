@@ -9,7 +9,7 @@ import java.util.Formatter;
 import java.util.Scanner;
 
 
-public class Client extends JFrame implements ActionListener{
+public class Client extends JFrame implements ActionListener {
 
     private Scanner input;
     private Formatter output;
@@ -19,8 +19,7 @@ public class Client extends JFrame implements ActionListener{
     private JTextField inputArea;
     private int helper;
 
-    Client(String address)
-    {
+    Client(String address) {
         super("Player");
         displayArea = new JTextArea();
         displayArea.setEditable(false);
@@ -28,12 +27,12 @@ public class Client extends JFrame implements ActionListener{
         inputArea = new JTextField();
         inputArea.addActionListener(this);
         add(inputArea, BorderLayout.SOUTH);
-        setSize(300,300);
+        setSize(300, 300);
         setVisible(true);
         this.address = address;
     }
 
-    private void displayMessage(final String messageToDisplay){
+    private void displayMessage(final String messageToDisplay) {
         SwingUtilities.invokeLater(
                 new Runnable() {
                     @Override
@@ -45,8 +44,7 @@ public class Client extends JFrame implements ActionListener{
     }
 
 
-    public void startClient()
-    {
+    public void startClient() {
         try {
             connection = new Socket(InetAddress.getByName(address), 23511);
             output = new Formatter(connection.getOutputStream());
@@ -63,24 +61,20 @@ public class Client extends JFrame implements ActionListener{
     }
 
 
-    private void startGame()
-    {
+    private void startGame() {
         output.format("Play\n");
         output.flush();
-        while(true)
-        {
-            if (input.hasNextLine())
-            {
-                processMessage(input.nextLine());
-            }
+        while (input.hasNextLine()) {
+            processMessage(input.nextLine());
         }
+
     }
 
     private void closeConnection() {
         try {
-            output.close(); // close output stream
-            input.close(); // close input stream
-            connection.close(); // close socket
+            output.close();
+            input.close();
+            connection.close();
             inputArea.setEditable(false);
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -88,23 +82,19 @@ public class Client extends JFrame implements ActionListener{
     }
 
 
-    private void processMessage(String message)
-    {
-        if(message.contains("Draws:"))
-        {
+    private void processMessage(String message) {
+        if (message.contains("Draws:")) {
             message = message.replace("Draws: ", "");
             displayMessage("Player: " + message);
             displayMessage("0: Hit, 1: Stay");
             displayMessage("Enter your choice: ");
             helper = 0;
         }
-        if(message.contains("Server:"))
-        {
+        if (message.contains("Server:")) {
             message = message.replace("Server: ", "");
             displayMessage(message);
         }
-        if(message.contains("Winner:"))
-        {
+        if (message.contains("Winner:")) {
             //message = message.replace("W/L: ", "");
             displayMessage(message);
             displayMessage("Play again?");
@@ -118,28 +108,24 @@ public class Client extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         int choice = Integer.parseInt(actionEvent.getActionCommand());
-        if (choice == 0 && helper == 0){
+        if (choice == 0 && helper == 0) {
             output.format("Hit\n");
             output.flush();
             inputArea.setText("");
-        }
-        else if(choice == 1 && helper == 0){
+        } else if (choice == 1 && helper == 0) {
             output.format("Stay\n");
             output.flush();
             inputArea.setText("");
-        }
-        else if(choice == 0 && helper == 1){
+        } else if (choice == 0 && helper == 1) {
             output.format("Play\n");
             output.flush();
             inputArea.setText("");
-        }
-        else if (choice == 1 && helper == 1){
+        } else if (choice == 1 && helper == 1) {
             output.format("Quit\n");
             output.flush();
             inputArea.setText("");
             closeConnection();
-        }
-        else {
+        } else {
             JOptionPane.showMessageDialog(null, "Invalid input");
             inputArea.setText("");
         }
