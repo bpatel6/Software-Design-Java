@@ -1,8 +1,17 @@
+/**
+ * The class to represent card face, value and suit
+ * @see Card
+ */
 public class Card {
     private int value;
     private String suit;
     private String face;
 
+    /**
+     * Card class constructor
+     * @param value card value
+     * @param suit card suit
+     */
     public Card(int value, String suit){
         if (value > 13 || value < 0){
             throw new IllegalArgumentException("value is not valid");
@@ -72,11 +81,18 @@ public class Card {
         }
     }
 
+    /**
+     * Method to access the value of the card
+     * @return card value
+     */
     public int getValue() {
         return value;
     }
 
-
+    /**
+     * Method to print of card face and suit
+     * @return String of card face and suit
+     */
     @Override
     public String toString() {
         return face + " of " + suit;

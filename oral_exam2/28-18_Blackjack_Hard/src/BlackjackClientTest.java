@@ -1,5 +1,9 @@
 import javax.swing.*;
 
+/**
+ * The class to run the client and to connect to server
+ * @see BlackjackClientTest
+ */
 public class BlackjackClientTest {
     public static void main(String[] args) {
         BlackjackClient application;

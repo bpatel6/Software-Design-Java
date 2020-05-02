@@ -1,3 +1,7 @@
+/**
+ * The class to test deck functions
+ * @see DeckTest
+ */
 public class DeckTest {
     public static void main(String[] args) {
         Deck i = new Deck();

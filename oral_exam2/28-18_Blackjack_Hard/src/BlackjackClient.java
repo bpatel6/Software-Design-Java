@@ -8,7 +8,10 @@ import java.net.Socket;
 import java.util.Formatter;
 import java.util.Scanner;
 
-
+/**
+ * The class to represent the Blackjack client/player
+ * @see BlackjackClient
+ */
 public class BlackjackClient extends JFrame implements ActionListener {
 
     private Scanner input;
@@ -19,6 +22,10 @@ public class BlackjackClient extends JFrame implements ActionListener {
     private JTextField inputArea;
     private int helper;
 
+    /**
+     * Constructor to initiate client GUI and client
+     * @param address
+     */
     BlackjackClient(String address) {
         super("Player");
         displayArea = new JTextArea();
@@ -34,6 +41,10 @@ public class BlackjackClient extends JFrame implements ActionListener {
         this.address = address;
     }
 
+    /**
+     * Method to add message to the display JTextArea
+     * @param messageToDisplay
+     */
     private void displayMessage(final String messageToDisplay) {
         SwingUtilities.invokeLater(
                 new Runnable() {
@@ -46,6 +57,9 @@ public class BlackjackClient extends JFrame implements ActionListener {
     }
 
 
+    /**
+     * Method to setup the socket, input & output streams and invokes the game
+     */
     public void startClient() {
         try {
             connection = new Socket(InetAddress.getByName(address), 23511);
@@ -62,7 +76,9 @@ public class BlackjackClient extends JFrame implements ActionListener {
         }
     }
 
-
+    /**
+     * Method to start the game and continuously runs until no input stream available
+     */
     private void startGame() {
         output.format("Play\n");
         output.flush();
@@ -72,6 +88,9 @@ public class BlackjackClient extends JFrame implements ActionListener {
 
     }
 
+    /**
+     * Method to close socket, input & output streams
+     */
     private void closeConnection() {
         try {
             output.close();
@@ -84,7 +103,12 @@ public class BlackjackClient extends JFrame implements ActionListener {
     }
 
 
+    /**
+     * Method to process a message received from the Dealer server
+     * @param message
+     */
     private void processMessage(String message) {
+        // If player wants to draw a new card from the deck
         if (message.contains("Draws:")) {
             message = message.replace("Draws: ", "");
             displayMessage("Player: " + message);
@@ -92,21 +116,27 @@ public class BlackjackClient extends JFrame implements ActionListener {
             displayMessage("Enter your choice: ");
             helper = 0;
         }
-        if (message.contains("Server:")) {
-            message = message.replace("Server: ", "");
-            displayMessage(message);
-        }
-        if (message.contains("Winner:")) {
-            //message = message.replace("W/L: ", "");
+        // If the game is over display the winner and the score
+        else if (message.contains("Winner:")) {
             displayMessage(message);
             displayMessage("Play again?");
             displayMessage("0: Yes, 1: No");
             displayMessage("Enter your choice:");
             helper = 1;
         }
+
+        // If the message sent from the server doesn't require any input from player
+        else if (message.contains("Server:")) {
+            message = message.replace("Server: ", "");
+            displayMessage(message);
+        }
     }
 
 
+    /**
+     * Method to send input from JTextField to the server
+     * @param actionEvent input put into the JTextField in GUI
+     */
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         int choice = Integer.parseInt(actionEvent.getActionCommand());
