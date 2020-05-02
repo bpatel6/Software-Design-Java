@@ -3,16 +3,26 @@
 
 import java.security.SecureRandom;
 
+/**
+ * The class to represent Consumer that checkout buffer and simulates the random threads
+ * @see Consumer
+ */
 public class Consumer implements Runnable {
     private static final SecureRandom generator = new SecureRandom();
     private final Buffer sharedLocation; // reference to shared object
 
-    // constructor
+    /**
+     * Constructor for consumer class
+     * @param sharedLocation location of the buffer
+     */
     public Consumer(Buffer sharedLocation) {
         this.sharedLocation = sharedLocation;
     }
 
-    // read sharedLocation's value 10 times and sum the values
+
+    /**
+     * Reads the sharedlocation's value 10 times and sums the value
+     */
     public void run() {
         int sum = 0;
 

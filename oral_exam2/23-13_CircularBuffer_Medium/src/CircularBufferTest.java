@@ -5,6 +5,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * The class to test LockCondition Buffer
+ * @see CircularBufferTest
+ */
 public class CircularBufferTest {
     public static void main(String[] args) throws InterruptedException {
         // create new thread pool with two threads

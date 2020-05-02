@@ -4,6 +4,11 @@ import java.util.concurrent.locks.ReentrantLock;
 
 // Fig. 23.18: CircularBuffer.java
 // Synchronizing access to a shared three-element bounded buffer.
+
+/**
+ * The class represents the lock and condition implementation of the circular buffer
+ * @see LockConditionCircularBuffer
+ */
 public class LockConditionCircularBuffer implements Buffer {
     private final int[] buffer = {-1, -1, -1}; // shared buffer
 
@@ -19,6 +24,12 @@ public class LockConditionCircularBuffer implements Buffer {
     private final Condition canRead = accessLock.newCondition();
 
     // place value into buffer
+
+    /**
+     * Method to place values into the buffer
+     * @param value to be stored in buffer
+     * @throws InterruptedException
+     */
     public void blockingPut(int value)
             throws InterruptedException {
         accessLock.lock(); // locks the object
@@ -48,6 +59,12 @@ public class LockConditionCircularBuffer implements Buffer {
     }
 
     // return value from buffer
+
+    /**
+     * Method to return the value from the buffer
+     * @return value from the buffer
+     * @throws InterruptedException
+     */
     public int blockingGet() throws InterruptedException {
         int readValue = 0; // Initialize value read from buffer
         accessLock.lock(); // lock this object
@@ -81,6 +98,11 @@ public class LockConditionCircularBuffer implements Buffer {
     }
 
     // display current operation and buffer state
+
+    /**
+     * Method to display current operation and the state of the buffer
+     * @param operation current operation
+     */
     public void displayState(String operation) {
         try {
             accessLock.lock();

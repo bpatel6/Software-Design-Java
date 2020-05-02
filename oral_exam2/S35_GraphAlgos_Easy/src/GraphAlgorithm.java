@@ -1,10 +1,18 @@
 import java.io.*;
 
+/**
+ * The class to find edges, zero vertices, average edge and the vertices with most number of edges
+ * @see GraphAlgorithm
+ */
 public class GraphAlgorithm {
     private static String [] words;
     private static double average;
     private static int [] connections = new int[5757];
-    public static void readFile() throws FileNotFoundException {
+
+    /**
+     * Method to read in word file
+     */
+    public static void readFile() {
         words = new String[5757];
         BufferedReader reader;
        try{
@@ -24,33 +32,42 @@ public class GraphAlgorithm {
        }
     }
 
+    /**
+     * Method to find the edges to all vertices
+     */
     public static void findEdges(){
-        StringBuilder adjecent;
+        StringBuilder adjacent;
        for (int i = 0; i < words.length; i++){
-           adjecent = new StringBuilder();
+           adjacent = new StringBuilder();
            for(int j = 0; j < words.length; j++){
                if (checkRelation(words[i], words[j])){
-                   adjecent.append(words[j]).append(", ");
+                   adjacent.append(words[j]).append(", ");
                     connections[i] = connections[i] + 1;
                }
            }
            /*if (connections[i] != 0){
-               System.out.println(words[i] + " adjacent to " + adjecent.deleteCharAt(adjecent.length()-2));
+               System.out.println(words[i] + " adjacent to " + adjacent.deleteCharAt(adjacent.length()-2));
            }*/
        }
     }
 
+    /**
+     * Method to find the zero edge vertices
+     */
     public static void zeroVertices(){
-        int zerovertices = 0;
+        int zeroVertices = 0;
         for (int i = 0; i < connections.length; i++){
             if (connections[i] == 0){
-                zerovertices++;
+                zeroVertices++;
             }
         }
         System.out.println("--------------------------------");
-        System.out.println("Number of vertices with 0 edge: " + zerovertices);
+        System.out.println("Number of vertices with 0 edge: " + zeroVertices);
     }
 
+    /**
+     * Method to compute average number of vertices
+     */
     public static void averageVertices(){
         double total = 0;
         for(int i = 0; i < connections.length; i++){
@@ -71,7 +88,12 @@ public class GraphAlgorithm {
         }
     }
 
-
+    /**
+     * Algorithm that check if two vertices are related or not
+     * @param word1 first vertices
+     * @param word2 second vertices
+     * @return true/false = related/not-related
+     */
     public static boolean checkRelation(String word1, String word2){
         int difference = 0;
         if (word1.length() == word2.length()) {

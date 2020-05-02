@@ -3,16 +3,26 @@
 
 import java.security.SecureRandom;
 
+/**
+ * The class to represent Producer that put data into buffer and generate random threads
+ * @see Producer
+ */
 public class Producer implements Runnable {
     private static final SecureRandom generator = new SecureRandom();
     private final Buffer sharedLocation; // reference to shared object
 
-    // constructor
+    /**
+     * Constructor for the Producer class
+     * @param sharedLocation location of the buffer
+     */
     public Producer(Buffer sharedLocation) {
         this.sharedLocation = sharedLocation;
     }
 
-    // store values from 1 to 10 in sharedLocation
+
+    /**
+     * Stores the value to shared location 10 times
+     */
     public void run() {
         int sum = 0;
 

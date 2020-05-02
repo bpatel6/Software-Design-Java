@@ -74,7 +74,9 @@ public class Maze {
         MazePoint[][] pointMaze = charToPoint(Maze);
         MazePoint currentPoint = pointMaze[currentRow][currentColumn];
         Maze[currentRow][currentColumn] = 'x';
+        //System.out.println("\n");
         //printMaze(Maze);
+        //System.out.println("\n");
         if(getRight(currentPoint,pointMaze) == 'E'){
             gameOver = true;
         }
