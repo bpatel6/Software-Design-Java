@@ -1,3 +1,7 @@
+/**
+ * The class to test MazeTraversal function
+ * @see MazeTest
+ */
 public class MazeTest {
     public static void main(String[] args){
         char[][] maze = {{'#','#','#','#','#','#','#','#','#','#','#','#'},
@@ -12,6 +16,7 @@ public class MazeTest {
                          {'#','#','#','#','#','#','.','#','#','#','.','#'},
                          {'#','.','.','.','.','.','.','#','.','.','.','#'},
                          {'#','#','#','#','#','#','#','#','#','#','#','#'}};
+
         Maze.printMaze(maze);
         Maze.mazeTraversal(maze,2,0);
         System.out.println(" ");
