@@ -130,6 +130,11 @@ public class BlackjackClient extends JFrame implements ActionListener {
             message = message.replace("Server: ", "");
             displayMessage(message);
         }
+
+        // If no message close connection
+        else {
+            closeConnection();
+        }
     }
 
 
