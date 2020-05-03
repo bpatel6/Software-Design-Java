@@ -54,7 +54,7 @@ public class GraphAlgorithm {
     /**
      * Method to find the zero edge vertices
      */
-    public static void zeroVertices(){
+    public static void zeroEdgeVertices(){
         int zeroVertices = 0;
         for (int i = 0; i < connections.length; i++){
             if (connections[i] == 0){
@@ -66,9 +66,9 @@ public class GraphAlgorithm {
     }
 
     /**
-     * Method to compute average number of vertices
+     * Method to compute average number of edges
      */
-    public static void averageVertices(){
+    public static void averageEdge(){
         double total = 0;
         for(int i = 0; i < connections.length; i++){
             total += connections[i];
@@ -78,7 +78,10 @@ public class GraphAlgorithm {
         System.out.println("Average number of Edge vertices has: " + average);
     }
 
-    public static void hasMostVertices(){
+    /**
+     * Method to find the vertices that has most number of edges
+     */
+    public static void hasMostEdges(){
         System.out.println("--------------------------------");
         System.out.println("Words that has the most vertices:");
         for (int i = 0; i < connections.length; i++){
