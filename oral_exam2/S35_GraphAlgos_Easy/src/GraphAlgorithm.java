@@ -5,8 +5,17 @@ import java.io.*;
  * @see GraphAlgorithm
  */
 public class GraphAlgorithm {
+    /**
+     * Stores the word read from file
+     */
     private static String [] words;
+    /**
+     * Stores the average number of edges vertices has
+     */
     private static double average;
+    /**
+     * Stores the connection of individual vertices
+     */
     private static int [] connections = new int[5757];
 
     /**

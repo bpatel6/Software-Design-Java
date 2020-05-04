@@ -3,8 +3,17 @@
  * @see Card
  */
 public class Card {
+    /**
+     * Stores card value
+     */
     private int value;
+    /**
+     * Stores card suit
+     */
     private String suit;
+    /**
+     * Stores card face
+     */
     private String face;
 
     /**

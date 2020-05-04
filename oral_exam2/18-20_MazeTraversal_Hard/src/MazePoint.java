@@ -3,8 +3,17 @@
  * @see MazePoint
  */
 public class MazePoint {
+    /**
+     * Stores row position
+     */
     private final int row;
+    /**
+     * Stores column position
+     */
     private final int column;
+    /**
+     * Stores data at a location
+     */
     private char data;
 
     /**

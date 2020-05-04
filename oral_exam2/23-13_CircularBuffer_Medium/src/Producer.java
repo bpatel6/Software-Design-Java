@@ -8,7 +8,13 @@ import java.security.SecureRandom;
  * @see Producer
  */
 public class Producer implements Runnable {
+    /**
+     * Stores random threads
+     */
     private static final SecureRandom generator = new SecureRandom();
+    /**
+     * Stores shared object reference
+     */
     private final Buffer sharedLocation; // reference to shared object
 
     /**

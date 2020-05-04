@@ -13,13 +13,33 @@ import java.util.Scanner;
  * @see BlackjackClient
  */
 public class BlackjackClient extends JFrame implements ActionListener {
-
+    /**
+     * Blackjack client input stream
+     */
     private Scanner input;
+    /**
+     * Blackjack client output stream
+     */
     private Formatter output;
+    /**
+     * Stores ip address
+     */
     private String address;
+    /**
+     * Blackjack socket connection
+     */
     private Socket connection;
+    /**
+     * Player GUI displayArea
+     */
     private JTextArea displayArea;
+    /**
+     * Player GUI inputArea
+     */
     private JTextField inputArea;
+    /**
+     * Helper to indicate inputs
+     */
     private int helper;
 
     /**

@@ -8,7 +8,13 @@ import java.security.SecureRandom;
  * @see Consumer
  */
 public class Consumer implements Runnable {
+    /**
+     * Stores random thread generated
+     */
     private static final SecureRandom generator = new SecureRandom();
+    /**
+     * Reference to shared object
+     */
     private final Buffer sharedLocation; // reference to shared object
 
     /**

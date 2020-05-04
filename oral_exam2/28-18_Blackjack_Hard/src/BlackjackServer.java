@@ -13,9 +13,21 @@ import java.util.concurrent.Executors;
  * @see BlackjackServer
  */
 public class BlackjackServer extends JFrame {
+    /**
+     * Blackjack server
+     */
     private ServerSocket server;
+    /**
+     * Blackjack execution service
+     */
     private ExecutorService service;
+    /**
+     * Blackjack player array to store player connecting
+     */
     private Player[] players;
+    /**
+     * Blackjack server GUI displayArea
+     */
     private JTextArea displayArea;
 
     /**
@@ -79,8 +91,17 @@ public class BlackjackServer extends JFrame {
      * @see Player
      */
     private class Player implements Runnable {
+        /**
+         * Blackjack player connection
+         */
         private Socket connection;
+        /**
+         * Blackjack server output stream
+         */
         private Formatter output;
+        /**
+         * Blackjack server input stream
+         */
         private Scanner input;
 
         /**

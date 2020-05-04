@@ -4,7 +4,13 @@
  */
 
 public class Maze {
+    /**
+     * Number of rows in maze
+     */
     private static final int rows = 12;
+    /**
+     * Number of columns in maze
+     */
     private static final int columns = 12;
 
     /**

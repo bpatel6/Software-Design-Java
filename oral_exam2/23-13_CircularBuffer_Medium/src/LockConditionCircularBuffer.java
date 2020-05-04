@@ -10,10 +10,22 @@ import java.util.concurrent.locks.ReentrantLock;
  * @see LockConditionCircularBuffer
  */
 public class LockConditionCircularBuffer implements Buffer {
+    /**
+     * Shared buffers
+     */
     private final int[] buffer = {-1, -1, -1}; // shared buffer
 
+    /**
+     * Count number of buffers in used
+     */
     private int occupiedCells = 0; // count number of buffers used
+    /**
+     * Index of next element to write to
+     */
     private int writeIndex = 0; // index of next element to write to
+    /**
+     * Index of next element to read
+     */
     private int readIndex = 0; // index of next element to read
 
     // Lock to control synchronization with this buffer

@@ -5,10 +5,25 @@ import java.util.Random;
  * @see Deck
  */
 public class Deck {
+    /**
+     * Suit for cards in deck
+     */
     private final String[] suits = {"Heart", "Diamond", "Spade", "Club"};
+    /**
+     * Value for cards in deck
+     */
     private final int[] values = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+    /**
+     * Array of cards
+     */
     private Card[] deck;
+    /**
+     * Tracks the top card in deck
+     */
     private int cardTracker;
+    /**
+     * Cards left in a deck
+     */
     private int cardLeft;
 
     /**

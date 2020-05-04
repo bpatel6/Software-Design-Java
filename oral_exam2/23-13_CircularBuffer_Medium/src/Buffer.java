@@ -6,8 +6,19 @@
  */
 public interface Buffer {
     // place int value into Buffer
+
+    /**
+     * Place int value into buffer
+     * @param value to put in buffer
+     * @throws InterruptedException
+     */
     public void blockingPut(int value) throws InterruptedException;
 
+    /**
+     * Obtain int value from Buffer
+     * @return int value of the buffer
+     * @throws InterruptedException
+     */
     // obtain int value from Buffer
     public int blockingGet() throws InterruptedException;
 } // end interface Buffer
